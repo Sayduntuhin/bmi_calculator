@@ -28,4 +28,4 @@ The  BMI Calculator App is a powerful and user-friendly application built using 
 | ![Image 1](assets/images/bmi_image1.jpg) | ![Image 2](assets/images/bmi_image2.jpg) | ![Image 3](assets/images/bmi_image3.jpg) |
 |:----------------------:|:----------------------:|:----------------------:
 ![Image 4](assets/images/bmi_image4.jpg) | ![Image 5](assets/images/bmi_image5.jpg) | 
-|:----------------------:|:----------------------:|
+
