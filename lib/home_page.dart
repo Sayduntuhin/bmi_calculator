@@ -10,6 +10,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 
 class Homepage extends StatefulWidget{
+  const Homepage({super.key});
+
 
 
 
@@ -157,6 +159,7 @@ class _HomepageState extends State<Homepage> {
     });
   }
 
+  @override
   Widget build(BuildContext context) {
     final double weight = double.tryParse(weightController.text) ?? 0;
     final double age = double.tryParse(ageController.text) ?? 0;
@@ -173,24 +176,24 @@ class _HomepageState extends State<Homepage> {
     double screenwidth = mediaQueryData.size.width;
     return Scaffold(
       appBar: AppBar(
-        title: Text("BMI Calculator",style: TextStyle(color: Colors.black),),
+        title: const Text("BMI Calculator",style: TextStyle(color: Colors.black),),
         backgroundColor: Colors.grey.shade200,
         toolbarHeight: 60,
         actions: [
 
           IconButton(
-            icon: Icon(Icons.undo),
+            icon: const Icon(Icons.undo),
             onPressed: clearTextFields,
           ),
           PopupMenuButton<String>(
             itemBuilder: (context) {
               return [
-                PopupMenuItem(child: Text('Settings'), value: 'Option 1' ),
+                const PopupMenuItem(child: Text('Settings'), value: 'Option 1' ),
 
 
               ];
             },
-            offset: Offset(0, 50),
+            offset: const Offset(0, 50),
             //color: Colors.grey.shade200,
             elevation: 2,
             onSelected: (value) {
@@ -210,7 +213,7 @@ class _HomepageState extends State<Homepage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           /// fast items
-          SizedBox(height: 5,),
+          const SizedBox(height: 5,),
           Padding(
         padding: const EdgeInsets.only(
           top: 15,
@@ -235,7 +238,7 @@ class _HomepageState extends State<Homepage> {
                           LengthLimitingTextInputFormatter(3)
                         ],
                         controller: ageController,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(color: Colors.black12)),
                           label: Center(child: Text("Age")),
@@ -243,11 +246,11 @@ class _HomepageState extends State<Homepage> {
                       ),
                     ),
 
-                    SizedBox(
+                    const SizedBox(
                       width: 8,
                     ),
                     Padding(
-                      padding: EdgeInsets.only(left: 10),
+                      padding: const EdgeInsets.only(left: 10),
                       child: SizedBox(
                         width: 80,
                         child: TextField(
@@ -257,7 +260,7 @@ class _HomepageState extends State<Homepage> {
                             LengthLimitingTextInputFormatter(4)
                           ],
                           keyboardType: TextInputType.number,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(color: Colors.black12)),
                             label: Padding(
@@ -274,7 +277,7 @@ class _HomepageState extends State<Homepage> {
                     ),
 //SizedBox(width: 8,),
                     Padding(
-                      padding: EdgeInsets.only(left: 10),
+                      padding: const EdgeInsets.only(left: 10),
                       child: SizedBox(
                         width: 80,
                         child: TextField(
@@ -284,7 +287,7 @@ class _HomepageState extends State<Homepage> {
                           inputFormatters: [
                             LengthLimitingTextInputFormatter(4)
                           ],
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(color: Colors.black12)),
                             label: Padding(
@@ -316,14 +319,14 @@ class _HomepageState extends State<Homepage> {
                           FilteringTextInputFormatter.digitsOnly,
                           LengthLimitingTextInputFormatter(3)
                         ],
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(color: Colors.black12)),
                           label: Center(child: Text("Age")),
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 18,
                     ),
                     SizedBox(
@@ -335,7 +338,7 @@ class _HomepageState extends State<Homepage> {
                         inputFormatters: [
                           LengthLimitingTextInputFormatter(6)
                         ],
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(color: Colors.black12)),
                           label: Center(
@@ -420,9 +423,9 @@ class _HomepageState extends State<Homepage> {
 
 
           /// second items
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
           Padding(
-          padding:  EdgeInsets.only(
+          padding:  const EdgeInsets.only(
             top: 15,
             left: 15,
           ),
@@ -449,7 +452,7 @@ class _HomepageState extends State<Homepage> {
               ),
             ),
           ),
-                      SizedBox(
+                      const SizedBox(
                         width: 20,
                       ),
                       SizedBox(
@@ -461,7 +464,7 @@ class _HomepageState extends State<Homepage> {
                           inputFormatters: [
                             LengthLimitingTextInputFormatter(6)
                           ],
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(color: Colors.black12)),
                             label: Center(
@@ -492,7 +495,7 @@ class _HomepageState extends State<Homepage> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 20,
                       ),
                       SizedBox(
@@ -504,7 +507,7 @@ class _HomepageState extends State<Homepage> {
                           inputFormatters: [
                             LengthLimitingTextInputFormatter(6)
                           ],
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(color: Colors.black12)),
                             label: Center(
@@ -535,11 +538,11 @@ class _HomepageState extends State<Homepage> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 8,
                       ),
                       Padding(
-                        padding: EdgeInsets.only(left: 10),
+                        padding: const EdgeInsets.only(left: 10),
                         child: SizedBox(
                           width: 80,
                           child: TextField(
@@ -549,7 +552,7 @@ class _HomepageState extends State<Homepage> {
                               LengthLimitingTextInputFormatter(4)
                             ],
                             controller: stoneController,
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                               enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(color: Colors.black12)),
                               label: Center(
@@ -564,7 +567,7 @@ class _HomepageState extends State<Homepage> {
                       ),
 //SizedBox(width: 8,),
                       Padding(
-                        padding: EdgeInsets.only(left: 12),
+                        padding: const EdgeInsets.only(left: 12),
                         child: SizedBox(
                           width: 80,
                           child: TextField(
@@ -574,7 +577,7 @@ class _HomepageState extends State<Homepage> {
                             inputFormatters: [
                               LengthLimitingTextInputFormatter(4)
                             ],
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                               enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(color: Colors.black12)),
                               label: Center(
@@ -588,7 +591,7 @@ class _HomepageState extends State<Homepage> {
                       )
                     ],
                   ),
-                SizedBox(width: 5,),
+                const SizedBox(width: 5,),
                 SizedBox(
                   width: 120,
                   child: DropdownButtonHideUnderline(
@@ -630,9 +633,9 @@ class _HomepageState extends State<Homepage> {
                         },
 
                         iconStyleData: IconStyleData(
-                          icon: Padding(
-                            padding: const EdgeInsets.only(top: 15,right: 5),
-                            child: const Icon(
+                          icon: const Padding(
+                            padding: EdgeInsets.only(top: 15,right: 5),
+                            child: Icon(
                               Icons.arrow_drop_down,
                               size: 25,
                             ),
@@ -657,7 +660,7 @@ class _HomepageState extends State<Homepage> {
             ),
           ),
         ),
-          SizedBox(height: 55,),
+          const SizedBox(height: 55,),
 
           /// third items ( Result Chart)
           ResultChart(

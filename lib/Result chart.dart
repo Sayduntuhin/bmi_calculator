@@ -19,7 +19,7 @@ class ResultChart extends StatefulWidget {
   final String? selecteditems;
   final String? selecteditems2;
 
-  ResultChart({
+  const ResultChart({super.key,
     required this.pointerValue,
     required this.age,
     required this.gender,
@@ -37,7 +37,7 @@ class ResultChart extends StatefulWidget {
 
 class _ResultChartState extends State<ResultChart>
     with SingleTickerProviderStateMixin{
-   late AnimationController _controller;
+
    double _markValue = 3.5;
    String getUnderweightStatus() {
      if (widget.age == 7 && widget.gender) {
@@ -614,7 +614,7 @@ class _ResultChartState extends State<ResultChart>
           SizedBox(
      height: 200,
           child: Padding(
-            padding:  EdgeInsets.only(top: 105),
+            padding:  const EdgeInsets.only(top: 105),
             child: SfRadialGauge(
               axes: <RadialAxis>[
                 RadialAxis
@@ -635,7 +635,7 @@ class _ResultChartState extends State<ResultChart>
                           label: 'Underwight',
                           sizeUnit: GaugeSizeUnit.factor,
                           labelStyle:
-                          GaugeTextStyle(
+                          const GaugeTextStyle(
                               fontFamily: 'Times', fontSize: 10,color: Colors.white),
                           startWidth: 0.34,
                           endWidth: 0.34,
@@ -649,7 +649,7 @@ class _ResultChartState extends State<ResultChart>
                         endValue: 65.85,
                         color: Colors.green.shade400,
                         label: 'Normal',
-                        labelStyle: GaugeTextStyle(
+                        labelStyle: const GaugeTextStyle(
                             fontFamily: 'Times', fontSize: 10,color: Colors.white),
                         startWidth: 0.34,
                         endWidth: 0.34,
@@ -660,7 +660,7 @@ class _ResultChartState extends State<ResultChart>
                         endValue: 99,
                         color: Colors.red.shade400,
                         label: 'Overweight',
-                        labelStyle: GaugeTextStyle(
+                        labelStyle: const GaugeTextStyle(
                             fontFamily: 'Times', fontSize: 10,color: Colors.white),
                         sizeUnit: GaugeSizeUnit.factor,
                         startWidth: 0.34,
@@ -670,7 +670,7 @@ class _ResultChartState extends State<ResultChart>
                     ],
                     annotations: <GaugeAnnotation>[
                       /// Fast Part
-                       GaugeAnnotation(
+                       const GaugeAnnotation(
                           angle: 175,
                           horizontalAlignment: GaugeAlignment.far,
                           positionFactor: 0.75,
@@ -686,7 +686,7 @@ class _ResultChartState extends State<ResultChart>
                               ),
                             ),
                           )),
-                       GaugeAnnotation(
+                       const GaugeAnnotation(
                           angle: 5,
                           horizontalAlignment: GaugeAlignment.far,
                           positionFactor: 0.85,
@@ -712,7 +712,7 @@ class _ResultChartState extends State<ResultChart>
                                   text:
                                   TextSpan(
                                    text: 'BMI\n',
-                                    style:  TextStyle(
+                                    style:  const TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.normal,
                                       fontSize: 12,
@@ -820,9 +820,9 @@ class _ResultChartState extends State<ResultChart>
                           positionFactor: .35,
                           verticalAlignment: GaugeAlignment.near,
                           widget: Padding(
-                            padding: EdgeInsets.only(),
+                            padding: const EdgeInsets.only(),
                             child:
-                                  widget.pointerValue <= 10 ? SizedBox(
+                                  widget.pointerValue <= 10 ? const SizedBox(
                                 width : 156,
                               child: Text(
                                 "      ...",
@@ -833,154 +833,154 @@ class _ResultChartState extends State<ResultChart>
                                 ),
                               ),
                             )
-                                : widget.pointerValue <=13.25 && widget.gender  && widget.age >= 7 && widget.age <= 8 ? SizedBox(
+                                : widget.pointerValue <=13.25 && widget.gender  && widget.age >= 7 && widget.age <= 8 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "UnderWeight",style: TextStyle(fontSize: 13, color: Colors.blue,
 
                               ),),
                             )
-                                : widget.pointerValue <=13.65 && !widget.gender  && widget.age == 7 ? SizedBox(
+                                : widget.pointerValue <=13.65 && !widget.gender  && widget.age == 7 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "UnderWeight",style: TextStyle(fontSize: 13, color: Colors.blue,
 
                               ),),
                             )
-                                : widget.pointerValue <=14.25 && !widget.gender  && widget.age == 8 ? SizedBox(
+                                : widget.pointerValue <=14.25 && !widget.gender  && widget.age == 8 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "UnderWeight",style: TextStyle(fontSize: 13, color: Colors.blue,
 
                               ),),
                             )
-                                : widget.pointerValue <=13.75  && widget.age == 9 ? SizedBox(
+                                : widget.pointerValue <=13.75  && widget.age == 9 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "UnderWeight",style: TextStyle(fontSize: 13, color: Colors.blue,
 
                               ),),
                             )
-                                : widget.pointerValue <=14.25 && widget.gender  && widget.age == 10 ? SizedBox(
+                                : widget.pointerValue <=14.25 && widget.gender  && widget.age == 10 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "UnderWeight",style: TextStyle(fontSize: 13, color: Colors.blue,
 
                               ),),
                             )
-                                : widget.pointerValue <=14.65 && !widget.gender  && widget.age == 10 ? SizedBox(
+                                : widget.pointerValue <=14.65 && !widget.gender  && widget.age == 10 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "UnderWeight",style: TextStyle(fontSize: 13, color: Colors.blue,
 
                               ),),
                             )
-                                : widget.pointerValue <=14.75 && widget.gender  && widget.age == 11 ? SizedBox(
+                                : widget.pointerValue <=14.75 && widget.gender  && widget.age == 11 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "UnderWeight",style: TextStyle(fontSize: 13, color: Colors.blue,
 
                               ),),
                             )
-                                : widget.pointerValue <=14.35 && !widget.gender  && widget.age == 11 ? SizedBox(
+                                : widget.pointerValue <=14.35 && !widget.gender  && widget.age == 11 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "UnderWeight",style: TextStyle(fontSize: 13, color: Colors.blue,
 
                               ),),
                             )
-                                : widget.pointerValue <=15.05 && widget.gender  && widget.age == 12 ? SizedBox(
+                                : widget.pointerValue <=15.05 && widget.gender  && widget.age == 12 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "UnderWeight",style: TextStyle(fontSize: 13, color: Colors.blue,
 
                               ),),
                             )
-                                : widget.pointerValue <=14.85 && !widget.gender  && widget.age == 12 ?SizedBox(
+                                : widget.pointerValue <=14.85 && !widget.gender  && widget.age == 12 ?const SizedBox(
                               width : 156,
                               child: Text(
                                 "UnderWeight",style: TextStyle(fontSize: 13, color: Colors.blue,
 
                               ),),
                             )
-                                : widget.pointerValue <=15.65 && widget.gender  && widget.age == 13 ? SizedBox(
+                                : widget.pointerValue <=15.65 && widget.gender  && widget.age == 13 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "UnderWeight",style: TextStyle(fontSize: 13, color: Colors.blue,
 
                               ),),
                             )
-                                : widget.pointerValue <=16.25 && !widget.gender  && widget.age == 13 ? SizedBox(
+                                : widget.pointerValue <=16.25 && !widget.gender  && widget.age == 13 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "UnderWeight",style: TextStyle(fontSize: 13, color: Colors.blue,
 
                               ),),
                             )
-                                : widget.pointerValue <=17.05 && widget.gender  && widget.age == 14 ? SizedBox(
+                                : widget.pointerValue <=17.05 && widget.gender  && widget.age == 14 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "UnderWeight",style: TextStyle(fontSize: 13, color: Colors.blue,
 
                               ),),
                             )
-                                : widget.pointerValue <=16.75 && !widget.gender  && widget.age == 14 ? SizedBox(
+                                : widget.pointerValue <=16.75 && !widget.gender  && widget.age == 14 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "UnderWeight",style: TextStyle(fontSize: 13, color: Colors.blue,
 
                               ),),
                             )
-                                : widget.pointerValue <=17.65 && widget.gender  && widget.age == 15 ?SizedBox(
+                                : widget.pointerValue <=17.65 && widget.gender  && widget.age == 15 ?const SizedBox(
                               width : 156,
                               child: Text(
                                 "UnderWeight",style: TextStyle(fontSize: 13, color: Colors.blue,
 
                               ),),
                             )
-                                : widget.pointerValue <=17.85 && !widget.gender  && widget.age == 15 ? SizedBox(
+                                : widget.pointerValue <=17.85 && !widget.gender  && widget.age == 15 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "UnderWeight",style: TextStyle(fontSize: 13, color: Colors.blue,
 
                               ),),
                             )
-                                : widget.pointerValue <=17.85 && widget.gender  && widget.age == 16 ? SizedBox(
+                                : widget.pointerValue <=17.85 && widget.gender  && widget.age == 16 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "UnderWeight",style: TextStyle(fontSize: 13, color: Colors.blue,
 
                               ),),
                             )
-                                : widget.pointerValue <=18.55 && !widget.gender  && widget.age == 16 ? SizedBox(
+                                : widget.pointerValue <=18.55 && !widget.gender  && widget.age == 16 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "UnderWeight",style: TextStyle(fontSize: 13, color: Colors.blue,
 
                               ),),
                             )
-                                : widget.pointerValue <=17.85 && widget.gender  && widget.age == 17 ? SizedBox(
+                                : widget.pointerValue <=17.85 && widget.gender  && widget.age == 17 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "UnderWeight",style: TextStyle(fontSize: 13, color: Colors.blue,
 
                               ),),
                             )
-                                : widget.pointerValue <=18.65 && !widget.gender  && widget.age == 17 ? SizedBox(
+                                : widget.pointerValue <=18.65 && !widget.gender  && widget.age == 17 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "UnderWeight",style: TextStyle(fontSize: 13, color: Colors.blue,
 
                               ),),
                             )
-                                : widget.pointerValue <=18.45 && widget.gender  && widget.age == 18 ? SizedBox(
+                                : widget.pointerValue <=18.45 && widget.gender  && widget.age == 18 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "UnderWeight",style: TextStyle(fontSize: 13, color: Colors.blue,
 
                               ),),
                             )
-                                : widget.pointerValue <=18.65 && !widget.gender  && widget.age == 18 ? SizedBox(
+                                : widget.pointerValue <=18.65 && !widget.gender  && widget.age == 18 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "UnderWeight",style: TextStyle(fontSize: 13, color: Colors.blue,
@@ -1143,156 +1143,156 @@ class _ResultChartState extends State<ResultChart>
                             )
 
 
-                                :  widget.pointerValue >18.15  &&   widget.pointerValue <=  23.05 && widget.gender  && widget.age == 7?  SizedBox(
+                                :  widget.pointerValue >18.15  &&   widget.pointerValue <=  23.05 && widget.gender  && widget.age == 7?  const SizedBox(
                               width : 156,
                               child: Text(
                                 "Overweight",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue >19.15 && widget.pointerValue <=  21.05 && !widget.gender  && widget.age == 7 ? SizedBox(
+                                : widget.pointerValue >19.15 && widget.pointerValue <=  21.05 && !widget.gender  && widget.age == 7 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "Overweight",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue > 18.75 && widget.pointerValue <=  22.25 && widget.gender  && widget.age == 8 ? SizedBox(
+                                : widget.pointerValue > 18.75 && widget.pointerValue <=  22.25 && widget.gender  && widget.age == 8 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "Overweight",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue > 19.25 && widget.pointerValue <=  22.55  && !widget.gender  && widget.age == 8 ? SizedBox(
+                                : widget.pointerValue > 19.25 && widget.pointerValue <=  22.55  && !widget.gender  && widget.age == 8 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "Overweight",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue > 19.75 && widget.pointerValue <=  23.35  && widget.gender  && widget.age == 9 ? SizedBox(
+                                : widget.pointerValue > 19.75 && widget.pointerValue <=  23.35  && widget.gender  && widget.age == 9 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "Overweight",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue > 19.35 && widget.pointerValue <=  21.55 && !widget.gender  && widget.age == 9 ?SizedBox(
+                                : widget.pointerValue > 19.35 && widget.pointerValue <=  21.55 && !widget.gender  && widget.age == 9 ?const SizedBox(
                               width : 156,
                               child: Text(
                                 "Overweight",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue > 20.65 && widget.pointerValue <=  23.35 && widget.gender  && widget.age == 10 ? SizedBox(
+                                : widget.pointerValue > 20.65 && widget.pointerValue <=  23.35 && widget.gender  && widget.age == 10 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "Overweight",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue > 21.35 && widget.pointerValue <=  24.95 && !widget.gender  && widget.age == 10 ?SizedBox(
+                                : widget.pointerValue > 21.35 && widget.pointerValue <=  24.95 && !widget.gender  && widget.age == 10 ?const SizedBox(
                               width : 156,
                               child: Text(
                                 "Overweight",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue > 20.75 && widget.pointerValue <=  22.85 && widget.gender  && widget.age == 11 ? SizedBox(
+                                : widget.pointerValue > 20.75 && widget.pointerValue <=  22.85 && widget.gender  && widget.age == 11 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "Overweight",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue > 21.15 && widget.pointerValue <=  22.35 && !widget.gender  && widget.age == 11 ? SizedBox(
+                                : widget.pointerValue > 21.15 && widget.pointerValue <=  22.35 && !widget.gender  && widget.age == 11 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "Overweight",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue > 21.45 && widget.pointerValue <=  23.35 && widget.gender  && widget.age == 12 ? SizedBox(
+                                : widget.pointerValue > 21.45 && widget.pointerValue <=  23.35 && widget.gender  && widget.age == 12 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "Overweight",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue > 21.95 && widget.pointerValue <=  24.75 && !widget.gender  && widget.age == 12 ? SizedBox(
+                                : widget.pointerValue > 21.95 && widget.pointerValue <=  24.75 && !widget.gender  && widget.age == 12 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "Overweight",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue > 21.95 && widget.pointerValue <=  24.35 && widget.gender  && widget.age == 13 ? SizedBox(
+                                : widget.pointerValue > 21.95 && widget.pointerValue <=  24.35 && widget.gender  && widget.age == 13 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "Overweight",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue > 21.65 && widget.pointerValue <=  24.45 && !widget.gender  && widget.age == 13 ? SizedBox(
+                                : widget.pointerValue > 21.65 && widget.pointerValue <=  24.45 && !widget.gender  && widget.age == 13 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "Overweight",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue > 23.15 && widget.pointerValue <=  25.95 && widget.gender  && widget.age == 14 ?SizedBox(
+                                : widget.pointerValue > 23.15 && widget.pointerValue <=  25.95 && widget.gender  && widget.age == 14 ?const SizedBox(
                               width : 156,
                               child: Text(
                                 "Overweight",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue > 22.55 && widget.pointerValue <=  25.65 && !widget.gender  && widget.age == 14 ? SizedBox(
+                                : widget.pointerValue > 22.55 && widget.pointerValue <=  25.65 && !widget.gender  && widget.age == 14 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "Overweight",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue > 23.15 && widget.pointerValue <=  27.55 && widget.gender  && widget.age == 15 ? SizedBox(
+                                : widget.pointerValue > 23.15 && widget.pointerValue <=  27.55 && widget.gender  && widget.age == 15 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "Overweight",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue > 23.05 && widget.pointerValue <=  25.85 && !widget.gender  && widget.age == 15 ?SizedBox(
+                                : widget.pointerValue > 23.05 && widget.pointerValue <=  25.85 && !widget.gender  && widget.age == 15 ?const SizedBox(
                               width : 22,
                               child: Center(child: Icon(Icons.arrow_right,color:Colors.red)),
                             )
-                                : widget.pointerValue > 22.75 && widget.pointerValue <=  24.15 && widget.gender  && widget.age == 16 ?SizedBox(
+                                : widget.pointerValue > 22.75 && widget.pointerValue <=  24.15 && widget.gender  && widget.age == 16 ?const SizedBox(
                               width : 22,
                               child: Center(child: Icon(Icons.arrow_right,color:Colors.red)),
                             )
-                                : widget.pointerValue > 23.65 && widget.pointerValue <=  25.95 && !widget.gender  && widget.age == 16 ?SizedBox(
+                                : widget.pointerValue > 23.65 && widget.pointerValue <=  25.95 && !widget.gender  && widget.age == 16 ?const SizedBox(
                               width : 156,
                               child: Text(
                                 "Overweight",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue > 23.35 && widget.pointerValue <= 25.65&& widget.gender  && widget.age == 17 ? SizedBox(
+                                : widget.pointerValue > 23.35 && widget.pointerValue <= 25.65&& widget.gender  && widget.age == 17 ? const SizedBox(
                               width : 22,
                               child: Center(child: Icon(Icons.arrow_right,color:Colors.red)),
                             )
-                                : widget.pointerValue > 23.65 && widget.pointerValue <=  25.75 && !widget.gender  && widget.age == 17 ? SizedBox(
+                                : widget.pointerValue > 23.65 && widget.pointerValue <=  25.75 && !widget.gender  && widget.age == 17 ? const SizedBox(
                               width : 22,
                               child: Center(child: Icon(Icons.arrow_right,color:Colors.red)),
                             )
-                                : widget.pointerValue > 23.45 && widget.pointerValue <=  24.95 && widget.gender  && widget.age == 18 ? SizedBox(
+                                : widget.pointerValue > 23.45 && widget.pointerValue <=  24.95 && widget.gender  && widget.age == 18 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "Overweight",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue > 23.95 && widget.pointerValue <=  26.75 && !widget.gender  && widget.age == 18 ? SizedBox(
+                                : widget.pointerValue > 23.95 && widget.pointerValue <=  26.75 && !widget.gender  && widget.age == 18 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "Overweight",style: TextStyle(fontSize: 13, color: Colors.red,
@@ -1300,156 +1300,156 @@ class _ResultChartState extends State<ResultChart>
                               ),),
                             )
 
-                                : widget.pointerValue > 23.05  && widget.gender  && widget.age == 7?  SizedBox(
+                                : widget.pointerValue > 23.05  && widget.gender  && widget.age == 7?  const SizedBox(
                               width : 156,
                               child: Text(
                                 "Obese",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue > 21.05  && !widget.gender  && widget.age == 7 ? SizedBox(
+                                : widget.pointerValue > 21.05  && !widget.gender  && widget.age == 7 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "Obese",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue > 22.25  && widget.gender  && widget.age == 8 ? SizedBox(
+                                : widget.pointerValue > 22.25  && widget.gender  && widget.age == 8 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "Obese",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue > 22.55 && !widget.gender  && widget.age == 8 ? SizedBox(
+                                : widget.pointerValue > 22.55 && !widget.gender  && widget.age == 8 ? const SizedBox(
                               width : 22,
                               child: Center(child: Icon(Icons.arrow_right,color: Colors.red)),
                             )
-                                : widget.pointerValue > 23.35  && widget.gender  && widget.age == 9 ? SizedBox(
+                                : widget.pointerValue > 23.35  && widget.gender  && widget.age == 9 ? const SizedBox(
                               width : 20,
                               child: Center(child: Icon(Icons.arrow_right,color:  Colors.red)),
                             )
-                                : widget.pointerValue > 21.55  && !widget.gender  && widget.age == 9 ?SizedBox(
+                                : widget.pointerValue > 21.55  && !widget.gender  && widget.age == 9 ?const SizedBox(
                               width : 156,
                               child: Text(
                                 "Obese",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue > 23.35  && widget.gender  && widget.age == 10 ? SizedBox(
+                                : widget.pointerValue > 23.35  && widget.gender  && widget.age == 10 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "Obese",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue > 25.55  && !widget.gender  && widget.age == 10 ?SizedBox(
+                                : widget.pointerValue > 25.55  && !widget.gender  && widget.age == 10 ?const SizedBox(
                               width : 156,
                               child: Text(
                                 "Obese",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue > 22.85 && widget.gender  && widget.age == 11 ? SizedBox(
+                                : widget.pointerValue > 22.85 && widget.gender  && widget.age == 11 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "Obese",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue > 23.55 && !widget.gender  && widget.age == 11 ? SizedBox(
+                                : widget.pointerValue > 23.55 && !widget.gender  && widget.age == 11 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "Obese",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue > 23.35  && widget.gender  && widget.age == 12 ? SizedBox(
+                                : widget.pointerValue > 23.35  && widget.gender  && widget.age == 12 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "Obese",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue > 24.75  && !widget.gender  && widget.age == 12 ? SizedBox(
+                                : widget.pointerValue > 24.75  && !widget.gender  && widget.age == 12 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "Obese",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue > 24.35  && widget.gender  && widget.age == 13 ? SizedBox(
+                                : widget.pointerValue > 24.35  && widget.gender  && widget.age == 13 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "Obese",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue > 24.45  &&  !widget.gender  && widget.age == 13 ? SizedBox(
+                                : widget.pointerValue > 24.45  &&  !widget.gender  && widget.age == 13 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "Obese",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue > 25.95  &&  widget.gender  && widget.age == 14 ?SizedBox(
+                                : widget.pointerValue > 25.95  &&  widget.gender  && widget.age == 14 ?const SizedBox(
                               width : 156,
                               child: Text(
                                 "Obese",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue > 25.65  &&  !widget.gender  && widget.age == 14 ? SizedBox(
+                                : widget.pointerValue > 25.65  &&  !widget.gender  && widget.age == 14 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "Obese",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue > 27.55  && widget.gender  && widget.age == 15 ? SizedBox(
+                                : widget.pointerValue > 27.55  && widget.gender  && widget.age == 15 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "Obese",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue > 25.85  && !widget.gender  && widget.age == 15 ?SizedBox(
+                                : widget.pointerValue > 25.85  && !widget.gender  && widget.age == 15 ?const SizedBox(
                               width : 22,
                               child: Center(child: Icon(Icons.arrow_right,color: Colors.red)),
                             )
-                                : widget.pointerValue > 24.15  && widget.gender  && widget.age == 16 ?SizedBox(
+                                : widget.pointerValue > 24.15  && widget.gender  && widget.age == 16 ?const SizedBox(
                               width : 22,
                               child: Center(child: Icon(Icons.arrow_right,color: Colors.red)),
                             )
-                                : widget.pointerValue > 25.95  && !widget.gender  && widget.age == 16 ?SizedBox(
+                                : widget.pointerValue > 25.95  && !widget.gender  && widget.age == 16 ?const SizedBox(
                               width : 156,
                               child: Text(
                                 "Obese",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue > 25.65  && widget.gender  && widget.age == 17 ? SizedBox(
+                                : widget.pointerValue > 25.65  && widget.gender  && widget.age == 17 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "Obese",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue > 25.75  && !widget.gender  && widget.age == 17 ? SizedBox(
+                                : widget.pointerValue > 25.75  && !widget.gender  && widget.age == 17 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "Obese",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                :  widget.pointerValue > 24.95  && widget.gender  && widget.age == 18 ? SizedBox(
+                                :  widget.pointerValue > 24.95  && widget.gender  && widget.age == 18 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "Obese",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue > 26.75  && !widget.gender  && widget.age == 18 ? SizedBox(
+                                : widget.pointerValue > 26.75  && !widget.gender  && widget.age == 18 ? const SizedBox(
                               width : 156,
                               child: Text(
                                 "Obese",style: TextStyle(fontSize: 13, color: Colors.red,
@@ -1457,21 +1457,21 @@ class _ResultChartState extends State<ResultChart>
                               ),),
                             )
 
-                                : widget.pointerValue <= 15.95 &&   widget.pointerValue > 10   && widget.age > 18?  SizedBox(
+                                : widget.pointerValue <= 15.95 &&   widget.pointerValue > 10   && widget.age > 18?  const SizedBox(
                             width : 156,
                             child: Text(
                               "Very Severely UnderWeight",style: TextStyle(fontSize: 13, color: Colors.blue,
 
                             ),),
                           )
-                                : widget.pointerValue <=16.95  &&   widget.pointerValue > 15.95  && widget.age > 18?  SizedBox(
+                                : widget.pointerValue <=16.95  &&   widget.pointerValue > 15.95  && widget.age > 18?  const SizedBox(
                               width : 156,
                               child: Text(
                                 "Severely UnderWeight",style: TextStyle(fontSize: 13, color: Colors.blue,
 
                               ),),
                             )
-                                : widget.pointerValue > 16.95 &&   widget.pointerValue <= 18.45   && widget.age > 18? SizedBox(
+                                : widget.pointerValue > 16.95 &&   widget.pointerValue <= 18.45   && widget.age > 18? const SizedBox(
                               width : 156,
                               child: Text(
                                 "UnderWeight",style: TextStyle(fontSize: 13, color: Colors.blue,
@@ -1485,35 +1485,35 @@ class _ResultChartState extends State<ResultChart>
 
                               ),),
                             )
-                                : widget.pointerValue >24.95 &&   widget.pointerValue <= 29.95   && widget.age > 18? SizedBox(
+                                : widget.pointerValue >24.95 &&   widget.pointerValue <= 29.95   && widget.age > 18? const SizedBox(
                               width : 156,
                               child: Text(
                                 "OverWeight",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue >29.95 &&   widget.pointerValue <= 34.95   && widget.age > 18? SizedBox(
+                                : widget.pointerValue >29.95 &&   widget.pointerValue <= 34.95   && widget.age > 18? const SizedBox(
                               width : 156,
                               child: Text(
                                 "Obese Class I",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue > 34.95 &&   widget.pointerValue <= 39.95   && widget.age > 18? SizedBox(
+                                : widget.pointerValue > 34.95 &&   widget.pointerValue <= 39.95   && widget.age > 18? const SizedBox(
                               width : 156,
                               child: Text(
                                 "Obese Class II",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : widget.pointerValue >=39.95  && widget.age > 18? SizedBox(
+                                : widget.pointerValue >=39.95  && widget.age > 18? const SizedBox(
                               width : 156,
                               child: Text(
                                 "Obese Class III",style: TextStyle(fontSize: 13, color: Colors.red,
 
                               ),),
                             )
-                                : SizedBox(
+                                : const SizedBox(
                          width : 156,
                          child: Text(
                            "      ...",
@@ -1536,12 +1536,12 @@ class _ResultChartState extends State<ResultChart>
                           positionFactor: 1.15,
                           verticalAlignment: GaugeAlignment.near,
                           widget: Padding(
-                            padding: EdgeInsets.only(top: 5,),
+                            padding: const EdgeInsets.only(top: 5,),
                             child:SizedBox(
                               width : 100,
                               height : 20,
                               child:
-                                    widget.pointerValue <= 10 ? Text(
+                                    widget.pointerValue <= 10 ? const Text(
                                 "   ...",
                                 style: TextStyle(
                                   color: Colors.black,
@@ -1552,666 +1552,666 @@ class _ResultChartState extends State<ResultChart>
                                   : widget.pointerValue <=13.25 && widget.gender  && widget.age >= 7 && widget.age <= 8 ? Row(
                                 children: [
 
-                                  Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
+                                  const Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
 
                                         widget.selecteditems2 == 'kg'  ? Row(
                                           children: [
-                                            Text('${difforkg.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                            Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                            Text('${difforkg.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                            const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                           ],
                                         )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                         children: [
-                                          Text('${kgtolbs.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
                                       : widget.selecteditems2 == 'st'  ?
 
                                       Row(
                                         children: [
-                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
-                                      : Text(
+                                      : const Text(
                                             " ",)
                                 ],
                               )
                                   : widget.pointerValue <=13.65 && !widget.gender  && widget.age == 7 ? Row(
                                 children: [
 
-                                  Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
+                                  const Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
 
                                         widget.selecteditems2 == 'kg'  ? Row(
                                           children: [
-                                            Text('${difforkg.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                            Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                            Text('${difforkg.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                            const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                           ],
                                         )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                         children: [
-                                          Text('${kgtolbs.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
                                       : widget.selecteditems2 == 'st'  ?
 
                                       Row(
                                         children: [
-                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
-                                      : Text(
+                                      : const Text(
                                             " ",)
                                 ],
                               )
                                   : widget.pointerValue <=14.25 && !widget.gender  && widget.age == 8 ? Row(
                                 children: [
 
-                                  Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
+                                  const Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
 
                                         widget.selecteditems2 == 'kg'  ? Row(
                                           children: [
-                                            Text('${difforkg.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                            Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                            Text('${difforkg.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                            const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                           ],
                                         )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                         children: [
-                                          Text('${kgtolbs.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
                                       : widget.selecteditems2 == 'st'  ?
 
                                       Row(
                                         children: [
-                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
-                                      : Text(
+                                      : const Text(
                                             " ",)
                                 ],
                               )
                                   : widget.pointerValue <=13.75  && widget.age == 9 ? Row(
                                 children: [
 
-                                  Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
+                                  const Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
 
                                         widget.selecteditems2 == 'kg'  ? Row(
                                           children: [
-                                            Text('${difforkg.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                            Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                            Text('${difforkg.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                            const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                           ],
                                         )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                         children: [
-                                          Text('${kgtolbs.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
                                       : widget.selecteditems2 == 'st'  ?
 
                                       Row(
                                         children: [
-                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
-                                      : Text(
+                                      : const Text(
                                             " ",)
                                 ],
                               )
                                   : widget.pointerValue <=14.25 && widget.gender  && widget.age == 10 ? Row(
                                 children: [
 
-                                  Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
+                                  const Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
 
                                         widget.selecteditems2 == 'kg'  ? Row(
                                           children: [
-                                            Text('${difforkg.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                            Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                            Text('${difforkg.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                            const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                           ],
                                         )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                         children: [
-                                          Text('${kgtolbs.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
                                       : widget.selecteditems2 == 'st'  ?
 
                                       Row(
                                         children: [
-                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
-                                      : Text(
+                                      : const Text(
                                             " ",)
                                 ],
                               )
                                   : widget.pointerValue <=14.65 && !widget.gender  && widget.age == 10 ? Row(
                                 children: [
 
-                                  Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
+                                  const Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
 
                                         widget.selecteditems2 == 'kg'  ? Row(
                                           children: [
-                                            Text('${difforkg.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                            Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                            Text('${difforkg.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                            const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                           ],
                                         )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                         children: [
-                                          Text('${kgtolbs.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
                                       : widget.selecteditems2 == 'st'  ?
 
                                       Row(
                                         children: [
-                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
-                                      : Text(
+                                      : const Text(
                                             " ",)
                                 ],
                               )
                                   : widget.pointerValue <=14.75 && widget.gender  && widget.age == 11 ?  Row(
                                       children: [
 
-                                        Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
+                                        const Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
 
                                         widget.selecteditems2 == 'kg'  ? Row(
                                           children: [
-                                            Text('${difforkg.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                            Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                            Text('${difforkg.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                            const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                           ],
                                         )
                                             : widget.selecteditems2 == 'lb'  ?  Row(
                                           children: [
-                                            Text('${kgtolbs.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                            Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                            Text('${kgtolbs.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                            const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                           ],
                                         )
                                             : widget.selecteditems2 == 'st'  ?
 
                                         Row(
                                           children: [
-                                            Text('${kgtolbs2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                            Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                            Text('${kgtolbs2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                            const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                           ],
                                         )
-                                            : Text(
+                                            : const Text(
                                           " ",)
                                       ],
                                     )
                                   : widget.pointerValue <=14.35 && !widget.gender  && widget.age == 11 ? Row(
                                 children: [
 
-                                  Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
+                                  const Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
 
                                         widget.selecteditems2 == 'kg'  ? Row(
                                           children: [
-                                            Text('${difforkg.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                            Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                            Text('${difforkg.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                            const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                           ],
                                         )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                         children: [
-                                          Text('${kgtolbs.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
                                       : widget.selecteditems2 == 'st'  ?
 
                                       Row(
                                         children: [
-                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
-                                      : Text(
+                                      : const Text(
                                             " ",)
                                 ],
                               )
                                   : widget.pointerValue <=15.05 && widget.gender  && widget.age == 12 ? Row(
                                 children: [
 
-                                  Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
+                                  const Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
 
                                         widget.selecteditems2 == 'kg'  ? Row(
                                           children: [
-                                            Text('${difforkg.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                            Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                            Text('${difforkg.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                            const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                           ],
                                         )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                         children: [
-                                          Text('${kgtolbs.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
                                       : widget.selecteditems2 == 'st'  ?
 
                                       Row(
                                         children: [
-                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
-                                      : Text(
+                                      : const Text(
                                             " ",)
                                 ],
                               )
                                   : widget.pointerValue <=14.85 && !widget.gender  && widget.age == 12 ? Row(
                                 children: [
 
-                                  Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
+                                  const Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
 
                                         widget.selecteditems2 == 'kg'  ? Row(
                                           children: [
-                                            Text('${difforkg.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                            Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                            Text('${difforkg.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                            const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                           ],
                                         )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                         children: [
-                                          Text('${kgtolbs.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
                                       : widget.selecteditems2 == 'st'  ?
 
                                       Row(
                                         children: [
-                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
-                                      : Text(
+                                      : const Text(
                                             " ",)
                                 ],
                               )
                                   : widget.pointerValue <=15.65 && widget.gender  && widget.age == 13 ? Row(
                                 children: [
 
-                                  Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
+                                  const Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
 
                                         widget.selecteditems2 == 'kg'  ? Row(
                                           children: [
-                                            Text('${difforkg.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                            Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                            Text('${difforkg.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                            const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                           ],
                                         )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                         children: [
-                                          Text('${kgtolbs.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
                                       : widget.selecteditems2 == 'st'  ?
 
                                       Row(
                                         children: [
-                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
-                                      : Text(
+                                      : const Text(
                                             " ",)
                                 ],
                               )
                                   : widget.pointerValue <=16.25 && !widget.gender  && widget.age == 13 ? Row(
                                 children: [
 
-                                  Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
+                                  const Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
 
                                         widget.selecteditems2 == 'kg'  ? Row(
                                           children: [
-                                            Text('${difforkg.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                            Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                            Text('${difforkg.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                            const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                           ],
                                         )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                         children: [
-                                          Text('${kgtolbs.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
                                       : widget.selecteditems2 == 'st'  ?
 
                                       Row(
                                         children: [
-                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
-                                      : Text(
+                                      : const Text(
                                             " ",)
                                 ],
                               )
                                   : widget.pointerValue <=17.05 && widget.gender  && widget.age == 14 ? Row(
                                 children: [
 
-                                  Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
+                                  const Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
 
                                         widget.selecteditems2 == 'kg'  ? Row(
                                           children: [
-                                            Text('${difforkg.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                            Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                            Text('${difforkg.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                            const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                           ],
                                         )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                         children: [
-                                          Text('${kgtolbs.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
                                       : widget.selecteditems2 == 'st'  ?
 
                                       Row(
                                         children: [
-                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
-                                      : Text(
+                                      : const Text(
                                             " ",)
                                 ],
                               )
                                   : widget.pointerValue <=16.75 && !widget.gender  && widget.age == 14 ? Row(
                                 children: [
 
-                                  Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
+                                  const Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
 
                                         widget.selecteditems2 == 'kg'  ? Row(
                                           children: [
-                                            Text('${difforkg.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                            Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                            Text('${difforkg.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                            const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                           ],
                                         )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                         children: [
-                                          Text('${kgtolbs.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
                                       : widget.selecteditems2 == 'st'  ?
 
                                       Row(
                                         children: [
-                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
-                                      : Text(
+                                      : const Text(
                                             " ",)
                                 ],
                               )
                                   : widget.pointerValue <=17.65 && widget.gender  && widget.age == 15 ? Row(
                                 children: [
 
-                                  Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
+                                  const Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
 
                                         widget.selecteditems2 == 'kg'  ? Row(
                                           children: [
-                                            Text('${difforkg.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                            Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                            Text('${difforkg.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                            const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                           ],
                                         )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                         children: [
-                                          Text('${kgtolbs.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
                                       : widget.selecteditems2 == 'st'  ?
 
                                       Row(
                                         children: [
-                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
-                                      : Text(
+                                      : const Text(
                                             " ",)
                                 ],
                               )
                                   : widget.pointerValue <=17.85 && !widget.gender  && widget.age == 15 ? Row(
                                 children: [
 
-                                  Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
+                                  const Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
 
                                         widget.selecteditems2 == 'kg'  ? Row(
                                           children: [
-                                            Text('${difforkg.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                            Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                            Text('${difforkg.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                            const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                           ],
                                         )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                         children: [
-                                          Text('${kgtolbs.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
                                       : widget.selecteditems2 == 'st'  ?
 
                                       Row(
                                         children: [
-                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
-                                      : Text(
+                                      : const Text(
                                             " ",)
                                 ],
                               )
                                   : widget.pointerValue <=17.85 && widget.gender  && widget.age == 16 ? Row(
                                 children: [
 
-                                  Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
+                                  const Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
 
                                         widget.selecteditems2 == 'kg'  ? Row(
                                           children: [
-                                            Text('${difforkg.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                            Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                            Text('${difforkg.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                            const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                           ],
                                         )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                         children: [
-                                          Text('${kgtolbs.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
                                       : widget.selecteditems2 == 'st'  ?
 
                                       Row(
                                         children: [
-                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
-                                      : Text(
+                                      : const Text(
                                             " ",)
                                 ],
                               )
                                   : widget.pointerValue <=18.55 && !widget.gender  && widget.age == 16 ?Row(
                                 children: [
 
-                                  Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
+                                  const Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
 
                                         widget.selecteditems2 == 'kg'  ? Row(
                                           children: [
-                                            Text('${difforkg.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                            Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                            Text('${difforkg.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                            const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                           ],
                                         )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                         children: [
-                                          Text('${kgtolbs.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
                                       : widget.selecteditems2 == 'st'  ?
 
                                       Row(
                                         children: [
-                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
-                                      : Text(
+                                      : const Text(
                                             " ",)
                                 ],
                               )
                                   : widget.pointerValue <=17.85 && widget.gender  && widget.age == 17 ? Row(
                                 children: [
 
-                                  Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
+                                  const Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
 
                                         widget.selecteditems2 == 'kg'  ? Row(
                                           children: [
-                                            Text('${difforkg.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                            Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                            Text('${difforkg.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                            const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                           ],
                                         )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                         children: [
-                                          Text('${kgtolbs.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
                                       : widget.selecteditems2 == 'st'  ?
 
                                       Row(
                                         children: [
-                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
-                                      : Text(
+                                      : const Text(
                                             " ",)
                                 ],
                               )
                                   : widget.pointerValue <=18.65 && !widget.gender  && widget.age == 17 ?Row(
                                 children: [
 
-                                  Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
+                                  const Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
 
                                         widget.selecteditems2 == 'kg'  ? Row(
                                           children: [
-                                            Text('${difforkg.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                            Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                            Text('${difforkg.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                            const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                           ],
                                         )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                         children: [
-                                          Text('${kgtolbs.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
                                       : widget.selecteditems2 == 'st'  ?
 
                                       Row(
                                         children: [
-                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
-                                      : Text(
+                                      : const Text(
                                             " ",)
                                 ],
                               )
                                   : widget.pointerValue <=18.45 && widget.gender  && widget.age == 18 ? Row(
                                 children: [
 
-                                  Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
+                                  const Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
 
                                         widget.selecteditems2 == 'kg'  ? Row(
                                           children: [
-                                            Text('${difforkg.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                            Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                            Text('${difforkg.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                            const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                           ],
                                         )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                         children: [
-                                          Text('${kgtolbs.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
                                       : widget.selecteditems2 == 'st'  ?
 
                                       Row(
                                         children: [
-                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
-                                      : Text(
+                                      : const Text(
                                             " ",)
                                 ],
                               )
                                   : widget.pointerValue <=18.65 && !widget.gender  && widget.age == 18 ? Row(
                                 children: [
 
-                                  Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
+                                  const Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
 
                                         widget.selecteditems2 == 'kg'  ? Row(
                                           children: [
-                                            Text('${difforkg.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                            Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                            Text('${difforkg.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                            const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                           ],
                                         )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                         children: [
-                                          Text('${kgtolbs.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
                                       : widget.selecteditems2 == 'st'  ?
 
                                       Row(
                                         children: [
-                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
-                                      : Text(
+                                      : const Text(
                                             " ",)
                                 ],
                               )
                                    : widget.pointerValue<= 18.45  && widget.age > 18 ? Row(children: [
 
-                                  Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
+                                  const Text('- ',style: TextStyle(fontSize: 15,color: Colors.blue)),
 
                                         widget.selecteditems2 == 'kg'  ? Row(
                                           children: [
-                                            Text('${difforkg.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                            Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                            Text('${difforkg.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                            const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                           ],
                                         )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                         children: [
-                                          Text('${kgtolbs.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
                                       : widget.selecteditems2 == 'st'  ?
 
                                       Row(
                                         children: [
-                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.blue)),
-                                          Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
+                                          Text('${kgtolbs2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.blue)),
+                                          const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.blue)),
                                         ],
                                       )
-                                      : Text(
+                                      : const Text(
                                             " ",)
                                 ],)
                                  ///Normal
@@ -2373,729 +2373,729 @@ class _ResultChartState extends State<ResultChart>
                                   : widget.pointerValue > 18.15  && widget.gender  && widget.age == 7?   Row(
                                 children: [
 
-                                  Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
+                                  const Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
 
                                   widget.selecteditems2 == 'kg'  ? Row(
                                     children: [
-                                      Text('${difforkg2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${difforkg2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                     children: [
-                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'st'  ?
 
                                   Row(
                                     children: [
-                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
-                                      : Text(
+                                      : const Text(
                                     " ",)
                                 ],
                               )
                                   :  widget.pointerValue > 19.15 && !widget.gender  && widget.age == 7 ? Row(
                                 children: [
 
-                                  Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
+                                  const Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
 
                                   widget.selecteditems2 == 'kg'  ? Row(
                                     children: [
-                                      Text('${difforkg2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${difforkg2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                     children: [
-                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'st'  ?
 
                                   Row(
                                     children: [
-                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
-                                      : Text(
+                                      : const Text(
                                     " ",)
                                 ],
                               )
                                   :  widget.pointerValue > 18.75 && widget.gender  && widget.age == 8 ? Row(
                                 children: [
 
-                                  Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
+                                  const Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
 
                                   widget.selecteditems2 == 'kg'  ? Row(
                                     children: [
-                                      Text('${difforkg2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${difforkg2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                     children: [
-                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'st'  ?
 
                                   Row(
                                     children: [
-                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
-                                      : Text(
+                                      : const Text(
                                     " ",)
                                 ],
                               )
                                   :  widget.pointerValue > 19.25  && !widget.gender  && widget.age == 8 ? Row(
                                 children: [
 
-                                  Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
+                                  const Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
 
                                   widget.selecteditems2 == 'kg'  ? Row(
                                     children: [
-                                      Text('${difforkg2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${difforkg2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                     children: [
-                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'st'  ?
 
                                   Row(
                                     children: [
-                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
-                                      : Text(
+                                      : const Text(
                                     " ",)
                                 ],
                               )
                                   :  widget.pointerValue > 19.75  && widget.gender  && widget.age == 9 ? Row(
                                 children: [
 
-                                  Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
+                                  const Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
 
                                   widget.selecteditems2 == 'kg'  ? Row(
                                     children: [
-                                      Text('${difforkg2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${difforkg2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                     children: [
-                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'st'  ?
 
                                   Row(
                                     children: [
-                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
-                                      : Text(
+                                      : const Text(
                                     " ",)
                                 ],
                               )
                                   : widget.pointerValue > 19.35 && !widget.gender  && widget.age == 9 ?Row(
                                 children: [
 
-                                  Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
+                                  const Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
 
                                   widget.selecteditems2 == 'kg'  ? Row(
                                     children: [
-                                      Text('${difforkg2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${difforkg2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                     children: [
-                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'st'  ?
 
                                   Row(
                                     children: [
-                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
-                                      : Text(
+                                      : const Text(
                                     " ",)
                                 ],
                               )
                                   : widget.pointerValue > 20.65 && widget.gender  && widget.age == 10 ? Row(
                                 children: [
 
-                                  Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
+                                  const Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
 
                                   widget.selecteditems2 == 'kg'  ? Row(
                                     children: [
-                                      Text('${difforkg2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${difforkg2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                     children: [
-                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'st'  ?
 
                                   Row(
                                     children: [
-                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
-                                      : Text(
+                                      : const Text(
                                     " ",)
                                 ],
                               )
                                   : widget.pointerValue > 21.35  && !widget.gender  && widget.age == 10 ?Row(
                                 children: [
 
-                                  Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
+                                  const Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
 
                                   widget.selecteditems2 == 'kg'  ? Row(
                                     children: [
-                                      Text('${difforkg2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${difforkg2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                     children: [
-                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'st'  ?
 
                                   Row(
                                     children: [
-                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
-                                      : Text(
+                                      : const Text(
                                     " ",)
                                 ],
                               )
                                   : widget.pointerValue > 20.75 && widget.gender  && widget.age == 11 ? Row(
                                 children: [
 
-                                  Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
+                                  const Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
 
                                   widget.selecteditems2 == 'kg'  ? Row(
                                     children: [
-                                      Text('${difforkg2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${difforkg2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                     children: [
-                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'st'  ?
 
                                   Row(
                                     children: [
-                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
-                                      : Text(
+                                      : const Text(
                                     " ",)
                                 ],
                               )
                                   : widget.pointerValue >  21.15 && !widget.gender  && widget.age == 11 ? Row(
                                 children: [
 
-                                  Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
+                                  const Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
 
                                   widget.selecteditems2 == 'kg'  ? Row(
                                     children: [
-                                      Text('${difforkg2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${difforkg2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                     children: [
-                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'st'  ?
 
                                   Row(
                                     children: [
-                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
-                                      : Text(
+                                      : const Text(
                                     " ",)
                                 ],
                               )
                                   : widget.pointerValue > 21.45 && widget.gender  && widget.age == 12 ? Row(
                                 children: [
 
-                                  Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
+                                  const Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
 
                                   widget.selecteditems2 == 'kg'  ? Row(
                                     children: [
-                                      Text('${difforkg2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${difforkg2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                     children: [
-                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'st'  ?
 
                                   Row(
                                     children: [
-                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
-                                      : Text(
+                                      : const Text(
                                     " ",)
                                 ],
                               )
                                   : widget.pointerValue > 21.95 && !widget.gender  && widget.age == 12 ? Row(
                                 children: [
 
-                                  Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
+                                  const Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
 
                                   widget.selecteditems2 == 'kg'  ? Row(
                                     children: [
-                                      Text('${difforkg2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${difforkg2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                     children: [
-                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'st'  ?
 
                                   Row(
                                     children: [
-                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
-                                      : Text(
+                                      : const Text(
                                     " ",)
                                 ],
                               )
                                   : widget.pointerValue > 21.95 && widget.gender  && widget.age == 13 ? Row(
                                 children: [
 
-                                  Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
+                                  const Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
 
                                   widget.selecteditems2 == 'kg'  ? Row(
                                     children: [
-                                      Text('${difforkg2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${difforkg2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                     children: [
-                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'st'  ?
 
                                   Row(
                                     children: [
-                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
-                                      : Text(
+                                      : const Text(
                                     " ",)
                                 ],
                               )
                                   : widget.pointerValue > 21.65 && !widget.gender  && widget.age == 13 ? Row(
                                 children: [
 
-                                  Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
+                                  const Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
 
                                   widget.selecteditems2 == 'kg'  ? Row(
                                     children: [
-                                      Text('${difforkg2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${difforkg2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                     children: [
-                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'st'  ?
 
                                   Row(
                                     children: [
-                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
-                                      : Text(
+                                      : const Text(
                                     " ",)
                                 ],
                               )
                                   : widget.pointerValue > 23.15 && widget.gender  && widget.age == 14 ?Row(
                                 children: [
 
-                                  Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
+                                  const Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
 
                                   widget.selecteditems2 == 'kg'  ? Row(
                                     children: [
-                                      Text('${difforkg2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${difforkg2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                     children: [
-                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'st'  ?
 
                                   Row(
                                     children: [
-                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
-                                      : Text(
+                                      : const Text(
                                     " ",)
                                 ],
                               )
                                   : widget.pointerValue > 22.55 && !widget.gender  && widget.age == 14 ? Row(
                                 children: [
 
-                                  Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
+                                  const Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
 
                                   widget.selecteditems2 == 'kg'  ? Row(
                                     children: [
-                                      Text('${difforkg2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${difforkg2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                     children: [
-                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'st'  ?
 
                                   Row(
                                     children: [
-                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
-                                      : Text(
+                                      : const Text(
                                     " ",)
                                 ],
                               )
                                   : widget.pointerValue > 23.15 && widget.gender  && widget.age == 15 ? Row(
                                 children: [
 
-                                  Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
+                                  const Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
 
                                   widget.selecteditems2 == 'kg'  ? Row(
                                     children: [
-                                      Text('${difforkg2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${difforkg2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                     children: [
-                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'st'  ?
 
                                   Row(
                                     children: [
-                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
-                                      : Text(
+                                      : const Text(
                                     " ",)
                                 ],
                               )
                                   : widget.pointerValue > 23.05 && !widget.gender  && widget.age == 15 ?Row(
                                 children: [
 
-                                  Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
+                                  const Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
 
                                   widget.selecteditems2 == 'kg'  ? Row(
                                     children: [
-                                      Text('${difforkg2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${difforkg2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                     children: [
-                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'st'  ?
 
                                   Row(
                                     children: [
-                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
-                                      : Text(
+                                      : const Text(
                                     " ",)
                                 ],
                               )
                                   : widget.pointerValue > 22.75 && widget.gender  && widget.age == 16 ?Row(
                                 children: [
 
-                                  Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
+                                  const Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
 
                                   widget.selecteditems2 == 'kg'  ? Row(
                                     children: [
-                                      Text('${difforkg2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${difforkg2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                     children: [
-                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'st'  ?
 
                                   Row(
                                     children: [
-                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
-                                      : Text(
+                                      : const Text(
                                     " ",)
                                 ],
                               )
                                   : widget.pointerValue > 23.65 && !widget.gender  && widget.age == 16 ?Row(
                                 children: [
 
-                                  Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
+                                  const Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
 
                                   widget.selecteditems2 == 'kg'  ? Row(
                                     children: [
-                                      Text('${difforkg2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${difforkg2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                     children: [
-                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'st'  ?
 
                                   Row(
                                     children: [
-                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
-                                      : Text(
+                                      : const Text(
                                     " ",)
                                 ],
                               )
                                   : widget.pointerValue > 23.35 && widget.gender  && widget.age == 17 ? Row(
                                 children: [
 
-                                  Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
+                                  const Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
 
                                   widget.selecteditems2 == 'kg'  ? Row(
                                     children: [
-                                      Text('${difforkg2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${difforkg2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                     children: [
-                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'st'  ?
 
                                   Row(
                                     children: [
-                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
-                                      : Text(
+                                      : const Text(
                                     " ",)
                                 ],
                               )
                                   : widget.pointerValue >23.65 && !widget.gender  && widget.age == 17 ? Row(
                                 children: [
 
-                                  Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
+                                  const Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
 
                                   widget.selecteditems2 == 'kg'  ? Row(
                                     children: [
-                                      Text('${difforkg2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${difforkg2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                     children: [
-                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'st'  ?
 
                                   Row(
                                     children: [
-                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
-                                      : Text(
+                                      : const Text(
                                     " ",)
                                 ],
                               )
                                   : widget.pointerValue > 23.45 && widget.gender  && widget.age == 18 ? Row(
                                 children: [
 
-                                  Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
+                                  const Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
 
                                   widget.selecteditems2 == 'kg'  ? Row(
                                     children: [
-                                      Text('${difforkg2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${difforkg2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                     children: [
-                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'st'  ?
 
                                   Row(
                                     children: [
-                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
-                                      : Text(
+                                      : const Text(
                                     " ",)
                                 ],
                               )
                                   : widget.pointerValue > 23.95 && !widget.gender  && widget.age == 18 ? Row(
                                 children: [
 
-                                  Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
+                                  const Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
 
                                   widget.selecteditems2 == 'kg'  ? Row(
                                     children: [
-                                      Text('${difforkg2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${difforkg2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                     children: [
-                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'st'  ?
 
                                   Row(
                                     children: [
-                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
-                                      : Text(
+                                      : const Text(
                                     " ",)
                                 ],
                               )
                                   :widget.pointerValue > 24.95 && widget.age > 18 ? Row(
                                 children: [
 
-                                  Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
+                                  const Text('+ ',style: TextStyle(fontSize: 15,color: Colors.red)),
 
                                   widget.selecteditems2 == 'kg'  ? Row(
                                     children: [
-                                      Text('${difforkg2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${difforkg2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" kg",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'lb'  ?  Row(
                                     children: [
-                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbsup.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
                                       : widget.selecteditems2 == 'st'  ?
 
                                   Row(
                                     children: [
-                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: TextStyle(fontSize: 13,color: Colors.red)),
-                                      Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
+                                      Text('${kgtolbs2up.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13,color: Colors.red)),
+                                      const Text(" lb",style: TextStyle(fontSize: 13,color: Colors.red)),
                                     ],
                                   )
-                                      : Text(
+                                      : const Text(
                                     " ",)
                                 ],
                               )
-                              :  Text(
+                              :  const Text(
                                 "...",
                                 style: TextStyle(
                                   color: Colors.black,
@@ -3112,7 +3112,7 @@ class _ResultChartState extends State<ResultChart>
                        ),
 
                           ///Divider
-                       GaugeAnnotation(
+                       const GaugeAnnotation(
                           angle: 20,
                           horizontalAlignment: GaugeAlignment.far,
                           positionFactor: 1.2,
@@ -3133,11 +3133,11 @@ class _ResultChartState extends State<ResultChart>
                           verticalAlignment: GaugeAlignment.near,
                           widget:
                           Padding(
-                            padding: EdgeInsets.only(top: 24),
+                            padding: const EdgeInsets.only(top: 24),
                             child:
                                 widget.age < 7
                                 ?
-                                Column(
+                                const Column(
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
 
@@ -3146,12 +3146,12 @@ class _ResultChartState extends State<ResultChart>
                                       children: [
                                         SizedBox (width: 28,  height: 18,),
                                         Padding(
-                                          padding: const EdgeInsets.only(left: 5),
+                                          padding: EdgeInsets.only(left: 5),
                                           child: SizedBox(
                                               height: 20,
                                               width : 130,
                                               child: Padding(
-                                                padding: const EdgeInsets.only(top:3.5),
+                                                padding: EdgeInsets.only(top:3.5),
                                                 child: Center(child: Text("Very Severely UnderWeight",style: TextStyle(fontSize: 12,),)),
                                               )),
                                         ),
@@ -3159,7 +3159,7 @@ class _ResultChartState extends State<ResultChart>
                                         SizedBox(
                                             width:40,
                                             child: Padding(
-                                              padding: const EdgeInsets.only(top:3.5),
+                                              padding: EdgeInsets.only(top:3.5),
                                               child: Text("≤ 15.9",style: TextStyle(fontSize: 12),),
                                             ))
                                       ],
@@ -3170,12 +3170,12 @@ class _ResultChartState extends State<ResultChart>
                                       children: [
                                         SizedBox (width: 28,  height: 18,),
                                         Padding(
-                                          padding: const EdgeInsets.only(left: 5),
+                                          padding: EdgeInsets.only(left: 5),
                                           child: SizedBox(
                                               height: 20,
                                               width : 105,
                                               child: Padding(
-                                                padding: const EdgeInsets.only(top:3.5),
+                                                padding: EdgeInsets.only(top:3.5),
                                                 child: Center(child: Text("Severely UnderWeight",style: TextStyle(fontSize: 12,),)),
                                               )),
                                         ),
@@ -3183,7 +3183,7 @@ class _ResultChartState extends State<ResultChart>
                                         SizedBox(
                                             width:60,
                                             child: Padding(
-                                              padding: const EdgeInsets.only(top:3.5),
+                                              padding: EdgeInsets.only(top:3.5),
                                               child: Text("16.0 - 16.9",style: TextStyle(fontSize: 12),),
                                             ))
                                       ],
@@ -3194,12 +3194,12 @@ class _ResultChartState extends State<ResultChart>
                                       children: [
                                         SizedBox (width: 28,  height: 18,),
                                         Padding(
-                                          padding: const EdgeInsets.only(left: 5),
+                                          padding: EdgeInsets.only(left: 5),
                                           child: SizedBox(
                                               height: 20,
                                               width : 65,
                                               child: Padding(
-                                                padding: const EdgeInsets.only(top:3.5),
+                                                padding: EdgeInsets.only(top:3.5),
                                                 child: Center(child: Text("UnderWeight",style: TextStyle(fontSize: 12,),)),
                                               )),
                                         ),
@@ -3207,7 +3207,7 @@ class _ResultChartState extends State<ResultChart>
                                         SizedBox(
                                             width:60,
                                             child: Padding(
-                                              padding: const EdgeInsets.only(top:3.5),
+                                              padding: EdgeInsets.only(top:3.5),
                                               child: Text("17.0 - 18.4",style: TextStyle(fontSize: 12),),
                                             ))
                                       ],
@@ -3219,19 +3219,19 @@ class _ResultChartState extends State<ResultChart>
                                 : widget.age <=18
                                 ? Column(
                                   children: [
-                                    SizedBox(height: 20,),
+                                    const SizedBox(height: 20,),
                                                 widget.pointerValue < 10 ? Padding(
                                            padding: const EdgeInsets.only(top: 8),
                                            child: Row(
                                              children: [
-                                               SizedBox(width: 37,),
-                                               Text(
+                                               const SizedBox(width: 37,),
+                                               const Text(
                                                  "UnderWeight",style: TextStyle(fontSize: 12,),),
-                                               SizedBox(width: 225,),
+                                               const SizedBox(width: 225,),
 
                                                Text(
                                                  getUnderweightStatus(),
-                                                 style: TextStyle(fontSize: 12,
+                                                 style: const TextStyle(fontSize: 12,
                                                      color: Colors.black,
                                                     ), )
                                              ],
@@ -3241,23 +3241,23 @@ class _ResultChartState extends State<ResultChart>
                                           padding: const EdgeInsets.only(top:4),
                                           child: Row(
                                       children: [
-                                          Padding(
-                                              padding: const EdgeInsets.only(left: 13),
+                                          const Padding(
+                                              padding: EdgeInsets.only(left: 13),
                                               child: Icon(Icons.arrow_right,color: Colors.blue,)
 
                                           ),
-                                          Text(
+                                          const Text(
                                             "UnderWeight",style: TextStyle(fontSize: 12, color: Colors.blue,
 
                                           ),),
-                                          SizedBox(width: 225,),
+                                          const SizedBox(width: 225,),
 
                                           Text(
 
                                             getUnderweightStatus(),
 
 
-                                            style: TextStyle(fontSize: 12,
+                                            style: const TextStyle(fontSize: 12,
                                                 color: Colors.blue), )
                                       ],
                                     ),
@@ -3266,23 +3266,23 @@ class _ResultChartState extends State<ResultChart>
                                           padding: const EdgeInsets.only(top:4),
                                           child: Row(
                                       children: [
-                                          Padding(
-                                              padding: const EdgeInsets.only(left: 13),
+                                          const Padding(
+                                              padding: EdgeInsets.only(left: 13),
                                               child: Icon(Icons.arrow_right,color: Colors.blue,)
 
                                           ),
-                                          Text(
+                                          const Text(
                                             "UnderWeight",style: TextStyle(fontSize: 12, color: Colors.blue,
 
                                           ),),
-                                          SizedBox(width: 225,),
+                                          const SizedBox(width: 225,),
 
                                           Text(
 
                                             getUnderweightStatus(),
 
 
-                                            style: TextStyle(fontSize: 12,
+                                            style: const TextStyle(fontSize: 12,
                                                 color: Colors.blue), )
                                       ],
                                     ),
@@ -3291,23 +3291,23 @@ class _ResultChartState extends State<ResultChart>
                                           padding: const EdgeInsets.only(top:4),
                                           child: Row(
                                       children: [
-                                          Padding(
-                                              padding: const EdgeInsets.only(left: 13),
+                                          const Padding(
+                                              padding: EdgeInsets.only(left: 13),
                                               child: Icon(Icons.arrow_right,color: Colors.blue,)
 
                                           ),
-                                          Text(
+                                          const Text(
                                             "UnderWeight",style: TextStyle(fontSize: 12, color: Colors.blue,
 
                                           ),),
-                                          SizedBox(width: 225,),
+                                          const SizedBox(width: 225,),
 
                                           Text(
 
                                             getUnderweightStatus(),
 
 
-                                            style: TextStyle(fontSize: 12,
+                                            style: const TextStyle(fontSize: 12,
                                                 color: Colors.blue), )
                                       ],
                                     ),
@@ -3316,23 +3316,23 @@ class _ResultChartState extends State<ResultChart>
                                           padding: const EdgeInsets.only(top:4),
                                           child: Row(
                                       children: [
-                                          Padding(
-                                              padding: const EdgeInsets.only(left: 13),
+                                          const Padding(
+                                              padding: EdgeInsets.only(left: 13),
                                               child: Icon(Icons.arrow_right,color: Colors.blue,)
 
                                           ),
-                                          Text(
+                                          const Text(
                                             "UnderWeight",style: TextStyle(fontSize: 12, color: Colors.blue,
 
                                           ),),
-                                          SizedBox(width: 225,),
+                                          const SizedBox(width: 225,),
 
                                           Text(
 
                                             getUnderweightStatus(),
 
 
-                                            style: TextStyle(fontSize: 12,
+                                            style: const TextStyle(fontSize: 12,
                                                 color: Colors.blue), )
                                       ],
                                     ),
@@ -3341,23 +3341,23 @@ class _ResultChartState extends State<ResultChart>
                                           padding: const EdgeInsets.only(top:4),
                                           child: Row(
                                       children: [
-                                          Padding(
-                                              padding: const EdgeInsets.only(left: 13),
+                                          const Padding(
+                                              padding: EdgeInsets.only(left: 13),
                                               child: Icon(Icons.arrow_right,color: Colors.blue,)
 
                                           ),
-                                          Text(
+                                          const Text(
                                             "UnderWeight",style: TextStyle(fontSize: 12, color: Colors.blue,
 
                                           ),),
-                                          SizedBox(width: 225,),
+                                          const SizedBox(width: 225,),
 
                                           Text(
 
                                             getUnderweightStatus(),
 
 
-                                            style: TextStyle(fontSize: 12,
+                                            style: const TextStyle(fontSize: 12,
                                                 color: Colors.blue), )
                                       ],
                                     ),
@@ -3366,23 +3366,23 @@ class _ResultChartState extends State<ResultChart>
                                           padding: const EdgeInsets.only(top:4),
                                           child: Row(
                                       children: [
-                                          Padding(
-                                              padding: const EdgeInsets.only(left: 13),
+                                          const Padding(
+                                              padding: EdgeInsets.only(left: 13),
                                               child: Icon(Icons.arrow_right,color: Colors.blue,)
 
                                           ),
-                                          Text(
+                                          const Text(
                                             "UnderWeight",style: TextStyle(fontSize: 12, color: Colors.blue,
 
                                           ),),
-                                          SizedBox(width: 225,),
+                                          const SizedBox(width: 225,),
 
                                           Text(
 
                                             getUnderweightStatus(),
 
 
-                                            style: TextStyle(fontSize: 12,
+                                            style: const TextStyle(fontSize: 12,
                                                 color: Colors.blue), )
                                       ],
                                     ),
@@ -3391,23 +3391,23 @@ class _ResultChartState extends State<ResultChart>
                                           padding: const EdgeInsets.only(top:4),
                                           child: Row(
                                       children: [
-                                          Padding(
-                                              padding: const EdgeInsets.only(left: 13),
+                                          const Padding(
+                                              padding: EdgeInsets.only(left: 13),
                                               child: Icon(Icons.arrow_right,color: Colors.blue,)
 
                                           ),
-                                          Text(
+                                          const Text(
                                             "UnderWeight",style: TextStyle(fontSize: 12, color: Colors.blue,
 
                                           ),),
-                                          SizedBox(width: 225,),
+                                          const SizedBox(width: 225,),
 
                                           Text(
 
                                             getUnderweightStatus(),
 
 
-                                            style: TextStyle(fontSize: 12,
+                                            style: const TextStyle(fontSize: 12,
                                                 color: Colors.blue), )
                                       ],
                                     ),
@@ -3416,23 +3416,23 @@ class _ResultChartState extends State<ResultChart>
                                           padding: const EdgeInsets.only(top:4),
                                           child: Row(
                                       children: [
-                                          Padding(
-                                              padding: const EdgeInsets.only(left: 13),
+                                          const Padding(
+                                              padding: EdgeInsets.only(left: 13),
                                               child: Icon(Icons.arrow_right,color: Colors.blue,)
 
                                           ),
-                                          Text(
+                                          const Text(
                                             "UnderWeight",style: TextStyle(fontSize: 12, color: Colors.blue,
 
                                           ),),
-                                          SizedBox(width: 225,),
+                                          const SizedBox(width: 225,),
 
                                           Text(
 
                                             getUnderweightStatus(),
 
 
-                                            style: TextStyle(fontSize: 12,
+                                            style: const TextStyle(fontSize: 12,
                                                 color: Colors.blue), )
                                       ],
                                     ),
@@ -3441,23 +3441,23 @@ class _ResultChartState extends State<ResultChart>
                                           padding: const EdgeInsets.only(top:4),
                                           child: Row(
                                       children: [
-                                          Padding(
-                                              padding: const EdgeInsets.only(left: 13),
+                                          const Padding(
+                                              padding: EdgeInsets.only(left: 13),
                                               child: Icon(Icons.arrow_right,color: Colors.blue,)
 
                                           ),
-                                          Text(
+                                          const Text(
                                             "UnderWeight",style: TextStyle(fontSize: 12, color: Colors.blue,
 
                                           ),),
-                                          SizedBox(width: 225,),
+                                          const SizedBox(width: 225,),
 
                                           Text(
 
                                             getUnderweightStatus(),
 
 
-                                            style: TextStyle(fontSize: 12,
+                                            style: const TextStyle(fontSize: 12,
                                                 color: Colors.blue), )
                                       ],
                                     ),
@@ -3466,23 +3466,23 @@ class _ResultChartState extends State<ResultChart>
                                           padding: const EdgeInsets.only(top:4),
                                           child: Row(
                                       children: [
-                                          Padding(
-                                              padding: const EdgeInsets.only(left: 13),
+                                          const Padding(
+                                              padding: EdgeInsets.only(left: 13),
                                               child: Icon(Icons.arrow_right,color: Colors.blue,)
 
                                           ),
-                                          Text(
+                                          const Text(
                                             "UnderWeight",style: TextStyle(fontSize: 12, color: Colors.blue,
 
                                           ),),
-                                          SizedBox(width: 225,),
+                                          const SizedBox(width: 225,),
 
                                           Text(
 
                                             getUnderweightStatus(),
 
 
-                                            style: TextStyle(fontSize: 12,
+                                            style: const TextStyle(fontSize: 12,
                                                 color: Colors.blue), )
                                       ],
                                     ),
@@ -3491,23 +3491,23 @@ class _ResultChartState extends State<ResultChart>
                                           padding: const EdgeInsets.only(top:4),
                                           child: Row(
                                       children: [
-                                          Padding(
-                                              padding: const EdgeInsets.only(left: 13),
+                                          const Padding(
+                                              padding: EdgeInsets.only(left: 13),
                                               child: Icon(Icons.arrow_right,color: Colors.blue,)
 
                                           ),
-                                          Text(
+                                          const Text(
                                             "UnderWeight",style: TextStyle(fontSize: 12, color: Colors.blue,
 
                                           ),),
-                                          SizedBox(width: 225,),
+                                          const SizedBox(width: 225,),
 
                                           Text(
 
                                             getUnderweightStatus(),
 
 
-                                            style: TextStyle(fontSize: 12,
+                                            style: const TextStyle(fontSize: 12,
                                                 color: Colors.blue), )
                                       ],
                                     ),
@@ -3516,23 +3516,23 @@ class _ResultChartState extends State<ResultChart>
                                           padding: const EdgeInsets.only(top:4),
                                           child: Row(
                                       children: [
-                                          Padding(
-                                              padding: const EdgeInsets.only(left: 13),
+                                          const Padding(
+                                              padding: EdgeInsets.only(left: 13),
                                               child: Icon(Icons.arrow_right,color: Colors.blue,)
 
                                           ),
-                                          Text(
+                                          const Text(
                                             "UnderWeight",style: TextStyle(fontSize: 12, color: Colors.blue,
 
                                           ),),
-                                          SizedBox(width: 225,),
+                                          const SizedBox(width: 225,),
 
                                           Text(
 
                                             getUnderweightStatus(),
 
 
-                                            style: TextStyle(fontSize: 12,
+                                            style: const TextStyle(fontSize: 12,
                                                 color: Colors.blue), )
                                       ],
                                     ),
@@ -3541,23 +3541,23 @@ class _ResultChartState extends State<ResultChart>
                                           padding: const EdgeInsets.only(top:4),
                                           child: Row(
                                       children: [
-                                          Padding(
-                                              padding: const EdgeInsets.only(left: 13),
+                                          const Padding(
+                                              padding: EdgeInsets.only(left: 13),
                                               child: Icon(Icons.arrow_right,color: Colors.blue,)
 
                                           ),
-                                          Text(
+                                          const Text(
                                             "UnderWeight",style: TextStyle(fontSize: 12, color: Colors.blue,
 
                                           ),),
-                                          SizedBox(width: 225,),
+                                          const SizedBox(width: 225,),
 
                                           Text(
 
                                             getUnderweightStatus(),
 
 
-                                            style: TextStyle(fontSize: 12,
+                                            style: const TextStyle(fontSize: 12,
                                                 color: Colors.blue), )
                                       ],
                                     ),
@@ -3566,23 +3566,23 @@ class _ResultChartState extends State<ResultChart>
                                           padding: const EdgeInsets.only(top:4),
                                           child: Row(
                                       children: [
-                                          Padding(
-                                              padding: const EdgeInsets.only(left: 13),
+                                          const Padding(
+                                              padding: EdgeInsets.only(left: 13),
                                               child: Icon(Icons.arrow_right,color: Colors.blue,)
 
                                           ),
-                                          Text(
+                                          const Text(
                                             "UnderWeight",style: TextStyle(fontSize: 12, color: Colors.blue,
 
                                           ),),
-                                          SizedBox(width: 225,),
+                                          const SizedBox(width: 225,),
 
                                           Text(
 
                                             getUnderweightStatus(),
 
 
-                                            style: TextStyle(fontSize: 12,
+                                            style: const TextStyle(fontSize: 12,
                                                 color: Colors.blue), )
                                       ],
                                     ),
@@ -3591,23 +3591,23 @@ class _ResultChartState extends State<ResultChart>
                                           padding: const EdgeInsets.only(top:4),
                                           child: Row(
                                       children: [
-                                          Padding(
-                                              padding: const EdgeInsets.only(left: 13),
+                                          const Padding(
+                                              padding: EdgeInsets.only(left: 13),
                                               child: Icon(Icons.arrow_right,color: Colors.blue,)
 
                                           ),
-                                          Text(
+                                          const Text(
                                             "UnderWeight",style: TextStyle(fontSize: 12, color: Colors.blue,
 
                                           ),),
-                                          SizedBox(width: 225,),
+                                          const SizedBox(width: 225,),
 
                                           Text(
 
                                             getUnderweightStatus(),
 
 
-                                            style: TextStyle(fontSize: 12,
+                                            style: const TextStyle(fontSize: 12,
                                                 color: Colors.blue), )
                                       ],
                                     ),
@@ -3616,23 +3616,23 @@ class _ResultChartState extends State<ResultChart>
                                           padding: const EdgeInsets.only(top:4),
                                           child: Row(
                                       children: [
-                                          Padding(
-                                              padding: const EdgeInsets.only(left: 13),
+                                          const Padding(
+                                              padding: EdgeInsets.only(left: 13),
                                               child: Icon(Icons.arrow_right,color: Colors.blue,)
 
                                           ),
-                                          Text(
+                                          const Text(
                                             "UnderWeight",style: TextStyle(fontSize: 12, color: Colors.blue,
 
                                           ),),
-                                          SizedBox(width: 225,),
+                                          const SizedBox(width: 225,),
 
                                           Text(
 
                                             getUnderweightStatus(),
 
 
-                                            style: TextStyle(fontSize: 12,
+                                            style: const TextStyle(fontSize: 12,
                                                 color: Colors.blue), )
                                       ],
                                     ),
@@ -3641,23 +3641,23 @@ class _ResultChartState extends State<ResultChart>
                                           padding: const EdgeInsets.only(top:4),
                                           child: Row(
                                       children: [
-                                          Padding(
-                                              padding: const EdgeInsets.only(left: 13),
+                                          const Padding(
+                                              padding: EdgeInsets.only(left: 13),
                                               child: Icon(Icons.arrow_right,color: Colors.blue,)
 
                                           ),
-                                          Text(
+                                          const Text(
                                             "UnderWeight",style: TextStyle(fontSize: 12, color: Colors.blue,
 
                                           ),),
-                                          SizedBox(width: 225,),
+                                          const SizedBox(width: 225,),
 
                                           Text(
 
                                             getUnderweightStatus(),
 
 
-                                            style: TextStyle(fontSize: 12,
+                                            style: const TextStyle(fontSize: 12,
                                                 color: Colors.blue), )
                                       ],
                                     ),
@@ -3666,23 +3666,23 @@ class _ResultChartState extends State<ResultChart>
                                           padding: const EdgeInsets.only(top:4),
                                           child: Row(
                                       children: [
-                                          Padding(
-                                              padding: const EdgeInsets.only(left: 13),
+                                          const Padding(
+                                              padding: EdgeInsets.only(left: 13),
                                               child: Icon(Icons.arrow_right,color: Colors.blue,)
 
                                           ),
-                                          Text(
+                                          const Text(
                                             "UnderWeight",style: TextStyle(fontSize: 12, color: Colors.blue,
 
                                           ),),
-                                          SizedBox(width: 225,),
+                                          const SizedBox(width: 225,),
 
                                           Text(
 
                                             getUnderweightStatus(),
 
 
-                                            style: TextStyle(fontSize: 12,
+                                            style: const TextStyle(fontSize: 12,
                                                 color: Colors.blue), )
                                       ],
                                     ),
@@ -3691,23 +3691,23 @@ class _ResultChartState extends State<ResultChart>
                                           padding: const EdgeInsets.only(top:4),
                                           child: Row(
                                       children: [
-                                          Padding(
-                                              padding: const EdgeInsets.only(left: 13),
+                                          const Padding(
+                                              padding: EdgeInsets.only(left: 13),
                                               child: Icon(Icons.arrow_right,color: Colors.blue,)
 
                                           ),
-                                          Text(
+                                          const Text(
                                             "UnderWeight",style: TextStyle(fontSize: 12, color: Colors.blue,
 
                                           ),),
-                                          SizedBox(width: 225,),
+                                          const SizedBox(width: 225,),
 
                                           Text(
 
                                             getUnderweightStatus(),
 
 
-                                            style: TextStyle(fontSize: 12,
+                                            style: const TextStyle(fontSize: 12,
                                                 color: Colors.blue), )
                                       ],
                                     ),
@@ -3716,23 +3716,23 @@ class _ResultChartState extends State<ResultChart>
                                           padding: const EdgeInsets.only(top:4),
                                           child: Row(
                                       children: [
-                                          Padding(
-                                              padding: const EdgeInsets.only(left: 13),
+                                          const Padding(
+                                              padding: EdgeInsets.only(left: 13),
                                               child: Icon(Icons.arrow_right,color: Colors.blue,)
 
                                           ),
-                                          Text(
+                                          const Text(
                                             "UnderWeight",style: TextStyle(fontSize: 12, color: Colors.blue,
 
                                           ),),
-                                          SizedBox(width: 225,),
+                                          const SizedBox(width: 225,),
 
                                           Text(
 
                                             getUnderweightStatus(),
 
 
-                                            style: TextStyle(fontSize: 12,
+                                            style: const TextStyle(fontSize: 12,
                                                 color: Colors.blue), )
                                       ],
                                     ),
@@ -3741,23 +3741,23 @@ class _ResultChartState extends State<ResultChart>
                                           padding: const EdgeInsets.only(top:4),
                                           child: Row(
                                       children: [
-                                          Padding(
-                                              padding: const EdgeInsets.only(left: 13),
+                                          const Padding(
+                                              padding: EdgeInsets.only(left: 13),
                                               child: Icon(Icons.arrow_right,color: Colors.blue,)
 
                                           ),
-                                          Text(
+                                          const Text(
                                             "UnderWeight",style: TextStyle(fontSize: 12, color: Colors.blue,
 
                                           ),),
-                                          SizedBox(width: 225,),
+                                          const SizedBox(width: 225,),
 
                                           Text(
 
                                             getUnderweightStatus(),
 
 
-                                            style: TextStyle(fontSize: 12,
+                                            style: const TextStyle(fontSize: 12,
                                                 color: Colors.blue), )
                                       ],
                                     ),
@@ -3766,23 +3766,23 @@ class _ResultChartState extends State<ResultChart>
                                           padding: const EdgeInsets.only(top:4),
                                           child: Row(
                                       children: [
-                                          Padding(
-                                              padding: const EdgeInsets.only(left: 13),
+                                          const Padding(
+                                              padding: EdgeInsets.only(left: 13),
                                               child: Icon(Icons.arrow_right,color: Colors.blue,)
 
                                           ),
-                                          Text(
+                                          const Text(
                                             "UnderWeight",style: TextStyle(fontSize: 12, color: Colors.blue,
 
                                           ),),
-                                          SizedBox(width: 225,),
+                                          const SizedBox(width: 225,),
 
                                           Text(
 
                                             getUnderweightStatus(),
 
 
-                                            style: TextStyle(fontSize: 12,
+                                            style: const TextStyle(fontSize: 12,
                                                 color: Colors.blue), )
                                       ],
                                     ),
@@ -3790,15 +3790,15 @@ class _ResultChartState extends State<ResultChart>
                                             padding: const EdgeInsets.only(top: 8),
                                            child: Row(
                                              children: [
-                                               SizedBox(width: 37,),
-                                               Text(
+                                               const SizedBox(width: 37,),
+                                               const Text(
                                                  "UnderWeight",style: TextStyle(fontSize: 12,),),
-                                               SizedBox(width: 225,),
+                                               const SizedBox(width: 225,),
 
                                                SizedBox(
                                                  child: Text(
                                                    getUnderweightStatus(),
-                                                   style: TextStyle(fontSize: 12,
+                                                   style: const TextStyle(fontSize: 12,
                                                      color: Colors.black,
                                                    ), ),
                                                )
@@ -3815,13 +3815,13 @@ class _ResultChartState extends State<ResultChart>
 
                                     Row(
                                       children: [
-                                        SizedBox (width: 10,),
+                                        const SizedBox (width: 10,),
                                         widget.pointerValue <= 15.95 &&   widget.pointerValue > 10   && widget.age > 18?
-                                        SizedBox(
+                                        const SizedBox(
                                             height: 20,
                                             width: 18,
                                           child: Icon(Icons.arrow_right,color: Colors.blue),
-                                        ) : SizedBox( width: 18, height: 20,),
+                                        ) : const SizedBox( width: 18, height: 20,),
                                         Padding(
                                           padding: const EdgeInsets.only(left: 5),
                                           child: SizedBox(
@@ -3833,7 +3833,7 @@ class _ResultChartState extends State<ResultChart>
                                               widget.pointerValue <= 15.95 &&   widget.pointerValue > 10   && widget.age > 18? Colors.blue : Colors.black),)),
                                             )),
                                         ),
-                                        SizedBox(width: 160,),
+                                        const SizedBox(width: 160,),
                                         SizedBox(
                                             width:40,
                                             child: Padding(
@@ -3843,16 +3843,16 @@ class _ResultChartState extends State<ResultChart>
                                             ))
                                       ],
                                     ),
-                                    SizedBox(height: 3.5,),
+                                    const SizedBox(height: 3.5,),
                                     Row(
                                       children: [
-                                        SizedBox (width: 10,),
+                                        const SizedBox (width: 10,),
                                         widget.pointerValue <= 16.95  &&   widget.pointerValue > 15.95  && widget.age > 18?
-                                        SizedBox(
+                                        const SizedBox(
                                           height: 21,
                                           width: 18,
                                           child: Icon(Icons.arrow_right,color: Colors.blue),
-                                        ) : SizedBox( width: 18, height: 21,),
+                                        ) : const SizedBox( width: 18, height: 21,),
                                         Padding(
                                           padding: const EdgeInsets.only(left: 5),
                                           child: SizedBox(
@@ -3864,7 +3864,7 @@ class _ResultChartState extends State<ResultChart>
                                                 widget.pointerValue <= 16.95  &&   widget.pointerValue > 15.95  && widget.age > 18?  Colors.blue : Colors.black),)),
                                               )),
                                         ),
-                                        SizedBox(width: 170,),
+                                        const SizedBox(width: 170,),
                                         SizedBox(
                                             width:60,
                                             child: Padding(
@@ -3874,16 +3874,16 @@ class _ResultChartState extends State<ResultChart>
                                             ))
                                       ],
                                     ),
-                                    SizedBox(height: 3,),
+                                    const SizedBox(height: 3,),
                                     Row(
                                       children: [
-                                        SizedBox (width: 10,),
+                                        const SizedBox (width: 10,),
                                         widget.pointerValue > 16.95 &&   widget.pointerValue <= 18.45   && widget.age > 18?
-                                        SizedBox(
+                                        const SizedBox(
                                           height: 21,
                                           width: 18,
                                           child: Icon(Icons.arrow_right,color: Colors.blue),
-                                        ) : SizedBox( width: 18, height: 21,),
+                                        ) : const SizedBox( width: 18, height: 21,),
                                         Padding(
                                           padding: const EdgeInsets.only(left: 5),
                                           child: SizedBox(
@@ -3895,7 +3895,7 @@ class _ResultChartState extends State<ResultChart>
                                                 widget.pointerValue > 16.95 &&   widget.pointerValue <= 18.45   && widget.age > 18?Colors.blue : Colors.black),)),
                                               )),
                                         ),
-                                        SizedBox(width: 210,),
+                                        const SizedBox(width: 210,),
                                         SizedBox(
                                             width:60,
                                             child: Padding(
@@ -3920,7 +3920,7 @@ class _ResultChartState extends State<ResultChart>
                           verticalAlignment: GaugeAlignment.near,
                           widget:
                           widget.age < 7
-                          ? Column(
+                          ? const Column(
                             children: [
 
                               SizedBox(height: 6,),
@@ -3929,7 +3929,7 @@ class _ResultChartState extends State<ResultChart>
                                   SizedBox (width: 10,),
                                    SizedBox( width: 18,height: 20,),
                                   SizedBox(child: Padding(
-                                    padding: const EdgeInsets.only(left : 9,top: 3.5),
+                                    padding: EdgeInsets.only(left : 9,top: 3.5),
                                     child: Text("Normal",style: TextStyle(fontSize: 12,),),
                                   )),
                                   SizedBox(width: 238,),
@@ -3943,7 +3943,7 @@ class _ResultChartState extends State<ResultChart>
 
                                   SizedBox( width: 18,height: 20,),
                                   SizedBox(child: Padding(
-                                    padding: const EdgeInsets.only(left : 9,top: 3.5),
+                                    padding: EdgeInsets.only(left : 9,top: 3.5),
                                     child: Text("Overweight",style: TextStyle(fontSize: 12,),),
                                   )),
                                   SizedBox(width: 220,),
@@ -3962,7 +3962,7 @@ class _ResultChartState extends State<ResultChart>
                                   //  ) ,
                                   SizedBox( width: 18,height: 20,),
                                   SizedBox(child: Padding(
-                                    padding: const EdgeInsets.only(left : 9,top: 3.5),
+                                    padding: EdgeInsets.only(left : 9,top: 3.5),
                                     child: Text("Obese Class I",style: TextStyle(fontSize: 12,),),
                                   )),
                                   SizedBox(width: 207,),
@@ -3983,7 +3983,7 @@ class _ResultChartState extends State<ResultChart>
 
                                     Row(
                                        children: [
-                                                  SizedBox(width : 15),
+                                                  const SizedBox(width : 15),
                                                    widget.pointerValue >13.25 &&   widget.pointerValue <= 18.15  && widget.gender  && widget.age == 7?   Row(
                                                 children: [
                                                     SizedBox(
@@ -3991,7 +3991,7 @@ class _ResultChartState extends State<ResultChart>
                                                   child: Center(child: Icon(Icons.arrow_right,color: Colors.green.shade400)),
                                             ),
                                                     Text("Normal",style: TextStyle(fontSize: 12,color: Colors.green.shade400)),
-                                                    SizedBox(width: 245,),
+                                                    const SizedBox(width: 245,),
                                                     SizedBox(width: 50,
                                                       child: Text(getNormalweightStatus() ,style: TextStyle(fontSize: 12,
                                                         color:Colors.green.shade400)))
@@ -4004,7 +4004,7 @@ class _ResultChartState extends State<ResultChart>
                                                   child: Center(child: Icon(Icons.arrow_right,color: Colors.green.shade400)),
                                             ),
                                                     Text("Normal",style: TextStyle(fontSize: 12,color: Colors.green.shade400)),
-                                                    SizedBox(width: 245,),
+                                                    const SizedBox(width: 245,),
                                                     SizedBox(width: 50,
                                                       child: Text(getNormalweightStatus() ,style: TextStyle(fontSize: 12,
                                                         color:Colors.green.shade400)))
@@ -4017,7 +4017,7 @@ class _ResultChartState extends State<ResultChart>
                                                   child: Center(child: Icon(Icons.arrow_right,color: Colors.green.shade400)),
                                             ),
                                                     Text("Normal",style: TextStyle(fontSize: 12,color: Colors.green.shade400)),
-                                                    SizedBox(width: 245,),
+                                                    const SizedBox(width: 245,),
                                                     SizedBox(width: 50,
                                                       child: Text(getNormalweightStatus() ,style: TextStyle(fontSize: 12,
                                                         color:Colors.green.shade400)))
@@ -4030,7 +4030,7 @@ class _ResultChartState extends State<ResultChart>
                                                   child: Center(child: Icon(Icons.arrow_right,color: Colors.green.shade400)),
                                             ),
                                                     Text("Normal",style: TextStyle(fontSize: 12,color: Colors.green.shade400)),
-                                                    SizedBox(width: 245,),
+                                                    const SizedBox(width: 245,),
                                                     SizedBox(width: 50,
                                                       child: Text(getNormalweightStatus() ,style: TextStyle(fontSize: 12,
                                                         color:Colors.green.shade400)))
@@ -4043,7 +4043,7 @@ class _ResultChartState extends State<ResultChart>
                                                   child: Center(child: Icon(Icons.arrow_right,color: Colors.green.shade400)),
                                             ),
                                                     Text("Normal",style: TextStyle(fontSize: 12,color: Colors.green.shade400)),
-                                                    SizedBox(width: 245,),
+                                                    const SizedBox(width: 245,),
                                                     SizedBox(width: 50,
                                                       child: Text(getNormalweightStatus() ,style: TextStyle(fontSize: 12,
                                                         color:Colors.green.shade400)))
@@ -4056,7 +4056,7 @@ class _ResultChartState extends State<ResultChart>
                                                   child: Center(child: Icon(Icons.arrow_right,color: Colors.green.shade400)),
                                             ),
                                                     Text("Normal",style: TextStyle(fontSize: 12,color: Colors.green.shade400)),
-                                                    SizedBox(width: 245,),
+                                                    const SizedBox(width: 245,),
                                                     SizedBox(width: 50,
                                                       child: Text(getNormalweightStatus() ,style: TextStyle(fontSize: 12,
                                                         color:Colors.green.shade400)))
@@ -4069,7 +4069,7 @@ class _ResultChartState extends State<ResultChart>
                                                   child: Center(child: Icon(Icons.arrow_right,color: Colors.green.shade400)),
                                             ),
                                                     Text("Normal",style: TextStyle(fontSize: 12,color: Colors.green.shade400)),
-                                                    SizedBox(width: 245,),
+                                                    const SizedBox(width: 245,),
                                                     SizedBox(width: 50,
                                                       child: Text(getNormalweightStatus() ,style: TextStyle(fontSize: 12,
                                                         color:Colors.green.shade400)))
@@ -4082,7 +4082,7 @@ class _ResultChartState extends State<ResultChart>
                                                   child: Center(child: Icon(Icons.arrow_right,color: Colors.green.shade400)),
                                             ),
                                                     Text("Normal",style: TextStyle(fontSize: 12,color: Colors.green.shade400)),
-                                                    SizedBox(width: 245,),
+                                                    const SizedBox(width: 245,),
                                                     SizedBox(width: 50,
                                                       child: Text(getNormalweightStatus() ,style: TextStyle(fontSize: 12,
                                                         color:Colors.green.shade400)))
@@ -4095,7 +4095,7 @@ class _ResultChartState extends State<ResultChart>
                                                   child: Center(child: Icon(Icons.arrow_right,color: Colors.green.shade400)),
                                             ),
                                                     Text("Normal",style: TextStyle(fontSize: 12,color: Colors.green.shade400)),
-                                                    SizedBox(width: 245,),
+                                                    const SizedBox(width: 245,),
                                                     SizedBox(width: 50,
                                                       child: Text(getNormalweightStatus() ,style: TextStyle(fontSize: 12,
                                                         color:Colors.green.shade400)))
@@ -4108,7 +4108,7 @@ class _ResultChartState extends State<ResultChart>
                                                   child: Center(child: Icon(Icons.arrow_right,color: Colors.green.shade400)),
                                             ),
                                                     Text("Normal",style: TextStyle(fontSize: 12,color: Colors.green.shade400)),
-                                                    SizedBox(width: 245,),
+                                                    const SizedBox(width: 245,),
                                                     SizedBox(width: 50,
                                                       child: Text(getNormalweightStatus() ,style: TextStyle(fontSize: 12,
                                                         color:Colors.green.shade400)))
@@ -4121,7 +4121,7 @@ class _ResultChartState extends State<ResultChart>
                                                   child: Center(child: Icon(Icons.arrow_right,color: Colors.green.shade400)),
                                             ),
                                                     Text("Normal",style: TextStyle(fontSize: 12,color: Colors.green.shade400)),
-                                                    SizedBox(width: 245,),
+                                                    const SizedBox(width: 245,),
                                                     SizedBox(width: 50,
                                                       child: Text(getNormalweightStatus() ,style: TextStyle(fontSize: 12,
                                                         color:Colors.green.shade400)))
@@ -4134,7 +4134,7 @@ class _ResultChartState extends State<ResultChart>
                                                   child: Center(child: Icon(Icons.arrow_right,color: Colors.green.shade400)),
                                             ),
                                                     Text("Normal",style: TextStyle(fontSize: 12,color: Colors.green.shade400)),
-                                                    SizedBox(width: 245,),
+                                                    const SizedBox(width: 245,),
                                                     SizedBox(width: 50,
                                                       child: Text(getNormalweightStatus() ,style: TextStyle(fontSize: 12,
                                                         color:Colors.green.shade400)))
@@ -4147,7 +4147,7 @@ class _ResultChartState extends State<ResultChart>
                                                   child: Center(child: Icon(Icons.arrow_right,color: Colors.green.shade400)),
                                             ),
                                                     Text("Normal",style: TextStyle(fontSize: 12,color: Colors.green.shade400)),
-                                                    SizedBox(width: 245,),
+                                                    const SizedBox(width: 245,),
                                                     SizedBox(width: 50,
                                                       child: Text(getNormalweightStatus() ,style: TextStyle(fontSize: 12,
                                                         color:Colors.green.shade400)))
@@ -4160,7 +4160,7 @@ class _ResultChartState extends State<ResultChart>
                                                   child: Center(child: Icon(Icons.arrow_right,color: Colors.green.shade400)),
                                             ),
                                                     Text("Normal",style: TextStyle(fontSize: 12,color: Colors.green.shade400)),
-                                                    SizedBox(width: 245,),
+                                                    const SizedBox(width: 245,),
                                                     SizedBox(width: 50,
                                                       child: Text(getNormalweightStatus() ,style: TextStyle(fontSize: 12,
                                                         color:Colors.green.shade400)))
@@ -4173,7 +4173,7 @@ class _ResultChartState extends State<ResultChart>
                                                   child: Center(child: Icon(Icons.arrow_right,color: Colors.green.shade400)),
                                             ),
                                                     Text("Normal",style: TextStyle(fontSize: 12,color: Colors.green.shade400)),
-                                                    SizedBox(width: 245,),
+                                                    const SizedBox(width: 245,),
                                                     SizedBox(width: 50,
                                                       child: Text(getNormalweightStatus() ,style: TextStyle(fontSize: 12,
                                                         color:Colors.green.shade400)))
@@ -4186,7 +4186,7 @@ class _ResultChartState extends State<ResultChart>
                                                   child: Center(child: Icon(Icons.arrow_right,color: Colors.green.shade400)),
                                             ),
                                                     Text("Normal",style: TextStyle(fontSize: 12,color: Colors.green.shade400)),
-                                                    SizedBox(width: 245,),
+                                                    const SizedBox(width: 245,),
                                                     SizedBox(width: 50,
                                                       child: Text(getNormalweightStatus() ,style: TextStyle(fontSize: 12,
                                                         color:Colors.green.shade400)))
@@ -4199,7 +4199,7 @@ class _ResultChartState extends State<ResultChart>
                                                   child: Center(child: Icon(Icons.arrow_right,color: Colors.green.shade400)),
                                             ),
                                                     Text("Normal",style: TextStyle(fontSize: 12,color: Colors.green.shade400)),
-                                                    SizedBox(width: 245,),
+                                                    const SizedBox(width: 245,),
                                                     SizedBox(width: 50,
                                                       child: Text(getNormalweightStatus() ,style: TextStyle(fontSize: 12,
                                                         color:Colors.green.shade400)))
@@ -4212,7 +4212,7 @@ class _ResultChartState extends State<ResultChart>
                                                   child: Center(child: Icon(Icons.arrow_right,color: Colors.green.shade400)),
                                             ),
                                                     Text("Normal",style: TextStyle(fontSize: 12,color: Colors.green.shade400)),
-                                                    SizedBox(width: 245,),
+                                                    const SizedBox(width: 245,),
                                                     SizedBox(width: 50,
                                                       child: Text(getNormalweightStatus() ,style: TextStyle(fontSize: 12,
                                                         color:Colors.green.shade400)))
@@ -4225,7 +4225,7 @@ class _ResultChartState extends State<ResultChart>
                                                   child: Center(child: Icon(Icons.arrow_right,color: Colors.green.shade400)),
                                             ),
                                                     Text("Normal",style: TextStyle(fontSize: 12,color: Colors.green.shade400)),
-                                                    SizedBox(width: 245,),
+                                                    const SizedBox(width: 245,),
                                                     SizedBox(width: 50,
                                                       child: Text(getNormalweightStatus() ,style: TextStyle(fontSize: 12,
                                                         color:Colors.green.shade400)))
@@ -4238,7 +4238,7 @@ class _ResultChartState extends State<ResultChart>
                                                   child: Center(child: Icon(Icons.arrow_right,color: Colors.green.shade400)),
                                             ),
                                                     Text("Normal",style: TextStyle(fontSize: 12,color: Colors.green.shade400)),
-                                                    SizedBox(width: 245,),
+                                                    const SizedBox(width: 245,),
                                                     SizedBox(width: 50,
                                                       child: Text(getNormalweightStatus() ,style: TextStyle(fontSize: 12,
                                                         color:Colors.green.shade400)))
@@ -4251,7 +4251,7 @@ class _ResultChartState extends State<ResultChart>
                                                   child: Center(child: Icon(Icons.arrow_right,color: Colors.green.shade400)),
                                             ),
                                                     Text("Normal",style: TextStyle(fontSize: 12,color: Colors.green.shade400)),
-                                                    SizedBox(width: 245,),
+                                                    const SizedBox(width: 245,),
                                                     SizedBox(width: 50,
                                                       child: Text(getNormalweightStatus() ,style: TextStyle(fontSize: 12,
                                                         color:Colors.green.shade400)))
@@ -4264,7 +4264,7 @@ class _ResultChartState extends State<ResultChart>
                                                   child: Center(child: Icon(Icons.arrow_right,color: Colors.green.shade400)),
                                             ),
                                                     Text("Normal",style: TextStyle(fontSize: 12,color: Colors.green.shade400)),
-                                                    SizedBox(width: 245,),
+                                                    const SizedBox(width: 245,),
                                                     SizedBox(width: 50,
                                                       child: Text(getNormalweightStatus() ,style: TextStyle(fontSize: 12,
                                                         color:Colors.green.shade400)))
@@ -4277,7 +4277,7 @@ class _ResultChartState extends State<ResultChart>
                                                   child: Center(child: Icon(Icons.arrow_right,color: Colors.green.shade400)),
                                             ),
                                                     Text("Normal",style: TextStyle(fontSize: 12,color: Colors.green.shade400)),
-                                                    SizedBox(width: 245,),
+                                                    const SizedBox(width: 245,),
                                                     SizedBox(width: 50,
                                                       child: Text(getNormalweightStatus() ,style: TextStyle(fontSize: 12,
                                                         color:Colors.green.shade400)))
@@ -4290,7 +4290,7 @@ class _ResultChartState extends State<ResultChart>
                                                   child: Center(child: Icon(Icons.arrow_right,color: Colors.green.shade400)),
                                             ),
                                                     Text("Normal",style: TextStyle(fontSize: 12,color: Colors.green.shade400)),
-                                                    SizedBox(width: 245,),
+                                                    const SizedBox(width: 245,),
                                                     SizedBox(
                                                       child: Text(getNormalweightStatus() ,style: TextStyle(fontSize: 12,
                                                         color:Colors.green.shade400)))
@@ -4302,368 +4302,368 @@ class _ResultChartState extends State<ResultChart>
                                              //   height: 25,
                                              //   width: 22,),
 
-                                             SizedBox( width: 22,height: 25,),
-                                             SizedBox(child: Text("Normal",style: TextStyle(fontSize: 12,),)),
-                                             SizedBox(width: 245,),
-                                             SizedBox(child: Text(getNormalweightStatus() ,style: TextStyle(fontSize: 12),))
+                                             const SizedBox( width: 22,height: 25,),
+                                             const SizedBox(child: Text("Normal",style: TextStyle(fontSize: 12,),)),
+                                             const SizedBox(width: 245,),
+                                             SizedBox(child: Text(getNormalweightStatus() ,style: const TextStyle(fontSize: 12),))
                                            ],
                                          ),
                                       ],
                                     ),
                                   ),
-                                  SizedBox(height: 18),
+                                  const SizedBox(height: 18),
                                   ///overweight
                                   SizedBox(
                                       height : 30,
                                     child:
                                     widget.pointerValue >=18.2  &&   widget.pointerValue < 23.1 && widget.gender  && widget.age == 7?  Row(
                                       children: [
-                                        SizedBox(width : 15),
-                                        SizedBox(
+                                        const SizedBox(width : 15),
+                                        const SizedBox(
                                           width : 22,
                                           child: Center(child: Icon(Icons.arrow_right,color:Colors.red)),
                                         ),
-                                        Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
-                                        SizedBox(width: 225,),
+                                        const Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
+                                        const SizedBox(width: 225,),
                                         SizedBox(
-                                            child: Text(getoverweightStatus(),style: TextStyle(fontSize: 12, color:Colors.red))),
+                                            child: Text(getoverweightStatus(),style: const TextStyle(fontSize: 12, color:Colors.red))),
 
                                       ],
                                     )
 
                                         :  widget.pointerValue >18.15  &&   widget.pointerValue <=  23.05 && widget.gender  && widget.age == 7?  Row(
                                       children: [
-                                        SizedBox(width : 15),
-                                        SizedBox(
+                                        const SizedBox(width : 15),
+                                        const SizedBox(
                                           width : 22,
                                           child: Center(child: Icon(Icons.arrow_right,color:Colors.red)),
                                         ),
-                                        Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
-                                        SizedBox(width: 225,),
+                                        const Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
+                                        const SizedBox(width: 225,),
                                         SizedBox(
-                                            child: Text(getoverweightStatus(),style: TextStyle(fontSize: 12, color:Colors.red))),
+                                            child: Text(getoverweightStatus(),style: const TextStyle(fontSize: 12, color:Colors.red))),
 
                                       ],
                                     )
                                         : widget.pointerValue >19.15 && widget.pointerValue <=  21.05 && !widget.gender  && widget.age == 7 ? Row(
                                       children: [
-                                        SizedBox(width : 15),
-                                        SizedBox(
+                                        const SizedBox(width : 15),
+                                        const SizedBox(
                                           width : 22,
                                           child: Center(child: Icon(Icons.arrow_right,color:Colors.red)),
                                         ),
-                                        Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
-                                        SizedBox(width: 225,),
+                                        const Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
+                                        const SizedBox(width: 225,),
                                         SizedBox(
-                                            child: Text(getoverweightStatus(),style: TextStyle(fontSize: 12, color:Colors.red))),
+                                            child: Text(getoverweightStatus(),style: const TextStyle(fontSize: 12, color:Colors.red))),
 
                                       ],
                                     )
                                         : widget.pointerValue > 18.75 && widget.pointerValue <=  22.25 && widget.gender  && widget.age == 8 ? Row(
                                       children: [
-                                        SizedBox(width : 15),
-                                        SizedBox(
+                                        const SizedBox(width : 15),
+                                        const SizedBox(
                                           width : 22,
                                           child: Center(child: Icon(Icons.arrow_right,color:Colors.red)),
                                         ),
-                                        Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
-                                        SizedBox(width: 225,),
+                                        const Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
+                                        const SizedBox(width: 225,),
                                         SizedBox(
-                                            child: Text(getoverweightStatus(),style: TextStyle(fontSize: 12, color:Colors.red))),
+                                            child: Text(getoverweightStatus(),style: const TextStyle(fontSize: 12, color:Colors.red))),
 
                                       ],
                                     )
                                         : widget.pointerValue > 19.25 && widget.pointerValue <=  22.55  && !widget.gender  && widget.age == 8 ? Row(
                                       children: [
-                                        SizedBox(width : 15),
-                                        SizedBox(
+                                        const SizedBox(width : 15),
+                                        const SizedBox(
                                           width : 22,
                                           child: Center(child: Icon(Icons.arrow_right,color:Colors.red)),
                                         ),
-                                        Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
-                                        SizedBox(width: 225,),
+                                        const Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
+                                        const SizedBox(width: 225,),
                                         SizedBox(
-                                            child: Text(getoverweightStatus(),style: TextStyle(fontSize: 12, color:Colors.red))),
+                                            child: Text(getoverweightStatus(),style: const TextStyle(fontSize: 12, color:Colors.red))),
 
                                       ],
                                     )
                                         : widget.pointerValue > 19.75 && widget.pointerValue <=  23.35  && widget.gender  && widget.age == 9 ? Row(
                                       children: [
-                                        SizedBox(width : 15),
-                                        SizedBox(
+                                        const SizedBox(width : 15),
+                                        const SizedBox(
                                           width : 22,
                                           child: Center(child: Icon(Icons.arrow_right,color:Colors.red)),
                                         ),
-                                        Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
-                                        SizedBox(width: 225,),
+                                        const Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
+                                        const SizedBox(width: 225,),
                                         SizedBox(
-                                            child: Text(getoverweightStatus(),style: TextStyle(fontSize: 12, color:Colors.red))),
+                                            child: Text(getoverweightStatus(),style: const TextStyle(fontSize: 12, color:Colors.red))),
 
                                       ],
                                     )
                                         : widget.pointerValue > 19.35 && widget.pointerValue <=  21.55 && !widget.gender  && widget.age == 9 ?Row(
                                       children: [
-                                        SizedBox(width : 15),
-                                        SizedBox(
+                                        const SizedBox(width : 15),
+                                        const SizedBox(
                                           width : 22,
                                           child: Center(child: Icon(Icons.arrow_right,color:Colors.red)),
                                         ),
-                                        Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
-                                        SizedBox(width: 225,),
+                                        const Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
+                                        const SizedBox(width: 225,),
                                         SizedBox(
-                                            child: Text(getoverweightStatus(),style: TextStyle(fontSize: 12, color:Colors.red))),
+                                            child: Text(getoverweightStatus(),style: const TextStyle(fontSize: 12, color:Colors.red))),
 
                                       ],
                                     )
                                         : widget.pointerValue > 20.65 && widget.pointerValue <=  23.35 && widget.gender  && widget.age == 10 ? Row(
                                       children: [
-                                        SizedBox(width : 15),
-                                        SizedBox(
+                                        const SizedBox(width : 15),
+                                        const SizedBox(
                                           width : 22,
                                           child: Center(child: Icon(Icons.arrow_right,color:Colors.red)),
                                         ),
-                                        Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
-                                        SizedBox(width: 225,),
+                                        const Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
+                                        const SizedBox(width: 225,),
                                         SizedBox(
-                                            child: Text(getoverweightStatus(),style: TextStyle(fontSize: 12, color:Colors.red))),
+                                            child: Text(getoverweightStatus(),style: const TextStyle(fontSize: 12, color:Colors.red))),
 
                                       ],
                                     )
                                         : widget.pointerValue > 21.35 && widget.pointerValue <=  24.95 && !widget.gender  && widget.age == 10 ?Row(
                                       children: [
-                                        SizedBox(width : 15),
-                                        SizedBox(
+                                        const SizedBox(width : 15),
+                                        const SizedBox(
                                           width : 22,
                                           child: Center(child: Icon(Icons.arrow_right,color:Colors.red)),
                                         ),
-                                        Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
-                                        SizedBox(width: 225,),
+                                        const Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
+                                        const SizedBox(width: 225,),
                                         SizedBox(
-                                            child: Text(getoverweightStatus(),style: TextStyle(fontSize: 12, color:Colors.red))),
+                                            child: Text(getoverweightStatus(),style: const TextStyle(fontSize: 12, color:Colors.red))),
 
                                       ],
                                     )
                                         : widget.pointerValue > 20.75 && widget.pointerValue <=  22.85 && widget.gender  && widget.age == 11 ? Row(
                                       children: [
-                                        SizedBox(width : 15),
-                                        SizedBox(
+                                        const SizedBox(width : 15),
+                                        const SizedBox(
                                           width : 22,
                                           child: Center(child: Icon(Icons.arrow_right,color:Colors.red)),
                                         ),
-                                        Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
-                                        SizedBox(width: 225,),
+                                        const Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
+                                        const SizedBox(width: 225,),
                                         SizedBox(
-                                            child: Text(getoverweightStatus(),style: TextStyle(fontSize: 12, color:Colors.red))),
+                                            child: Text(getoverweightStatus(),style: const TextStyle(fontSize: 12, color:Colors.red))),
 
                                       ],
                                     )
                                         : widget.pointerValue > 21.15 && widget.pointerValue <=  22.35 && !widget.gender  && widget.age == 11 ? Row(
                                       children: [
-                                        SizedBox(width : 15),
-                                        SizedBox(
+                                        const SizedBox(width : 15),
+                                        const SizedBox(
                                           width : 22,
                                           child: Center(child: Icon(Icons.arrow_right,color:Colors.red)),
                                         ),
-                                        Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
-                                        SizedBox(width: 225,),
+                                        const Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
+                                        const SizedBox(width: 225,),
                                         SizedBox(
-                                            child: Text(getoverweightStatus(),style: TextStyle(fontSize: 12, color:Colors.red))),
+                                            child: Text(getoverweightStatus(),style: const TextStyle(fontSize: 12, color:Colors.red))),
 
                                       ],
                                     )
                                         : widget.pointerValue > 21.45 && widget.pointerValue <=  23.35 && widget.gender  && widget.age == 12 ? Row(
                                       children: [
-                                        SizedBox(width : 15),
-                                        SizedBox(
+                                        const SizedBox(width : 15),
+                                        const SizedBox(
                                           width : 22,
                                           child: Center(child: Icon(Icons.arrow_right,color:Colors.red)),
                                         ),
-                                        Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
-                                        SizedBox(width: 225,),
+                                        const Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
+                                        const SizedBox(width: 225,),
                                         SizedBox(
-                                            child: Text(getoverweightStatus(),style: TextStyle(fontSize: 12, color:Colors.red))),
+                                            child: Text(getoverweightStatus(),style: const TextStyle(fontSize: 12, color:Colors.red))),
 
                                       ],
                                     )
                                         : widget.pointerValue > 21.95 && widget.pointerValue <=  24.75 && !widget.gender  && widget.age == 12 ? Row(
                                       children: [
-                                        SizedBox(width : 15),
-                                        SizedBox(
+                                        const SizedBox(width : 15),
+                                        const SizedBox(
                                           width : 22,
                                           child: Center(child: Icon(Icons.arrow_right,color:Colors.red)),
                                         ),
-                                        Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
-                                        SizedBox(width: 225,),
+                                        const Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
+                                        const SizedBox(width: 225,),
                                         SizedBox(
-                                            child: Text(getoverweightStatus(),style: TextStyle(fontSize: 12, color:Colors.red))),
+                                            child: Text(getoverweightStatus(),style: const TextStyle(fontSize: 12, color:Colors.red))),
 
                                       ],
                                     )
                                         : widget.pointerValue > 21.95 && widget.pointerValue <=  24.35 && widget.gender  && widget.age == 13 ? Row(
                                       children: [
-                                        SizedBox(width : 15),
-                                        SizedBox(
+                                        const SizedBox(width : 15),
+                                        const SizedBox(
                                           width : 22,
                                           child: Center(child: Icon(Icons.arrow_right,color:Colors.red)),
                                         ),
-                                        Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
-                                        SizedBox(width: 225,),
+                                        const Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
+                                        const SizedBox(width: 225,),
                                         SizedBox(
-                                            child: Text(getoverweightStatus(),style: TextStyle(fontSize: 12, color:Colors.red))),
+                                            child: Text(getoverweightStatus(),style: const TextStyle(fontSize: 12, color:Colors.red))),
 
                                       ],
                                     )
                                         : widget.pointerValue > 21.65 && widget.pointerValue <=  24.45 && !widget.gender  && widget.age == 13 ? Row(
                                       children: [
-                                        SizedBox(width : 15),
-                                        SizedBox(
+                                        const SizedBox(width : 15),
+                                        const SizedBox(
                                           width : 22,
                                           child: Center(child: Icon(Icons.arrow_right,color:Colors.red)),
                                         ),
-                                        Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
-                                        SizedBox(width: 225,),
+                                        const Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
+                                        const SizedBox(width: 225,),
                                         SizedBox(
-                                            child: Text(getoverweightStatus(),style: TextStyle(fontSize: 12, color:Colors.red))),
+                                            child: Text(getoverweightStatus(),style: const TextStyle(fontSize: 12, color:Colors.red))),
 
                                       ],
                                     )
                                         : widget.pointerValue > 23.15 && widget.pointerValue <=  25.95 && widget.gender  && widget.age == 14 ?Row(
                                       children: [
-                                        SizedBox(width : 15),
-                                        SizedBox(
+                                        const SizedBox(width : 15),
+                                        const SizedBox(
                                           width : 22,
                                           child: Center(child: Icon(Icons.arrow_right,color:Colors.red)),
                                         ),
-                                        Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
-                                        SizedBox(width: 225,),
+                                        const Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
+                                        const SizedBox(width: 225,),
                                         SizedBox(
-                                            child: Text(getoverweightStatus(),style: TextStyle(fontSize: 12, color:Colors.red))),
+                                            child: Text(getoverweightStatus(),style: const TextStyle(fontSize: 12, color:Colors.red))),
 
                                       ],
                                     )
                                         : widget.pointerValue > 22.55 && widget.pointerValue <=  25.65 && !widget.gender  && widget.age == 14 ? Row(
                                       children: [
-                                        SizedBox(width : 15),
-                                        SizedBox(
+                                        const SizedBox(width : 15),
+                                        const SizedBox(
                                           width : 22,
                                           child: Center(child: Icon(Icons.arrow_right,color:Colors.red)),
                                         ),
-                                        Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
-                                        SizedBox(width: 225,),
+                                        const Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
+                                        const SizedBox(width: 225,),
                                         SizedBox(
-                                            child: Text(getoverweightStatus(),style: TextStyle(fontSize: 12, color:Colors.red))),
+                                            child: Text(getoverweightStatus(),style: const TextStyle(fontSize: 12, color:Colors.red))),
 
                                       ],
                                     )
                                         : widget.pointerValue > 23.15 && widget.pointerValue <=  27.55 && widget.gender  && widget.age == 15 ? Row(
                                       children: [
-                                        SizedBox(width : 15),
-                                        SizedBox(
+                                        const SizedBox(width : 15),
+                                        const SizedBox(
                                           width : 22,
                                           child: Center(child: Icon(Icons.arrow_right,color:Colors.red)),
                                         ),
-                                        Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
-                                        SizedBox(width: 225,),
+                                        const Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
+                                        const SizedBox(width: 225,),
                                         SizedBox(
-                                            child: Text(getoverweightStatus(),style: TextStyle(fontSize: 12, color:Colors.red))),
+                                            child: Text(getoverweightStatus(),style: const TextStyle(fontSize: 12, color:Colors.red))),
 
                                       ],
                                     )
                                         : widget.pointerValue > 23.05 && widget.pointerValue <=  25.85 && !widget.gender  && widget.age == 15 ?Row(
                                       children: [
-                                        SizedBox(width : 15),
-                                        SizedBox(
+                                        const SizedBox(width : 15),
+                                        const SizedBox(
                                           width : 22,
                                           child: Center(child: Icon(Icons.arrow_right,color:Colors.red)),
                                         ),
-                                        Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
-                                        SizedBox(width: 225,),
+                                        const Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
+                                        const SizedBox(width: 225,),
                                         SizedBox(
-                                            child: Text(getoverweightStatus(),style: TextStyle(fontSize: 12, color:Colors.red))),
+                                            child: Text(getoverweightStatus(),style: const TextStyle(fontSize: 12, color:Colors.red))),
 
                                       ],
                                     )
                                         : widget.pointerValue > 22.75 && widget.pointerValue <=  24.15 && widget.gender  && widget.age == 16 ?Row(
                                       children: [
-                                        SizedBox(width : 15),
-                                        SizedBox(
+                                        const SizedBox(width : 15),
+                                        const SizedBox(
                                           width : 22,
                                           child: Center(child: Icon(Icons.arrow_right,color:Colors.red)),
                                         ),
-                                        Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
-                                        SizedBox(width: 225,),
+                                        const Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
+                                        const SizedBox(width: 225,),
                                         SizedBox(
-                                            child: Text(getoverweightStatus(),style: TextStyle(fontSize: 12, color:Colors.red))),
+                                            child: Text(getoverweightStatus(),style: const TextStyle(fontSize: 12, color:Colors.red))),
 
                                       ],
                                     )
                                         : widget.pointerValue > 23.65 && widget.pointerValue <=  25.95 && !widget.gender  && widget.age == 16 ?Row(
                                       children: [
-                                        SizedBox(width : 15),
-                                        SizedBox(
+                                        const SizedBox(width : 15),
+                                        const SizedBox(
                                           width : 22,
                                           child: Center(child: Icon(Icons.arrow_right,color:Colors.red)),
                                         ),
-                                        Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
-                                        SizedBox(width: 225,),
+                                        const Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
+                                        const SizedBox(width: 225,),
                                         SizedBox(
-                                            child: Text(getoverweightStatus(),style: TextStyle(fontSize: 12, color:Colors.red))),
+                                            child: Text(getoverweightStatus(),style: const TextStyle(fontSize: 12, color:Colors.red))),
 
                                       ],
                                     )
                                         : widget.pointerValue > 23.35 && widget.pointerValue <= 25.65&& widget.gender  && widget.age == 17 ? Row(
                                       children: [
-                                        SizedBox(width : 15),
-                                        SizedBox(
+                                        const SizedBox(width : 15),
+                                        const SizedBox(
                                           width : 22,
                                           child: Center(child: Icon(Icons.arrow_right,color:Colors.red)),
                                         ),
-                                        Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
-                                        SizedBox(width: 225,),
+                                        const Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
+                                        const SizedBox(width: 225,),
                                         SizedBox(
-                                            child: Text(getoverweightStatus(),style: TextStyle(fontSize: 12, color:Colors.red))),
+                                            child: Text(getoverweightStatus(),style: const TextStyle(fontSize: 12, color:Colors.red))),
 
                                       ],
                                     )
                                         : widget.pointerValue > 23.65 && widget.pointerValue <=  25.75 && !widget.gender  && widget.age == 17 ? Row(
                                       children: [
-                                        SizedBox(width : 15),
-                                        SizedBox(
+                                        const SizedBox(width : 15),
+                                        const SizedBox(
                                           width : 22,
                                           child: Center(child: Icon(Icons.arrow_right,color:Colors.red)),
                                         ),
-                                        Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
-                                        SizedBox(width: 225,),
+                                        const Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
+                                        const SizedBox(width: 225,),
                                         SizedBox(
-                                            child: Text(getoverweightStatus(),style: TextStyle(fontSize: 12, color:Colors.red))),
+                                            child: Text(getoverweightStatus(),style: const TextStyle(fontSize: 12, color:Colors.red))),
 
                                       ],
                                     )
                                         : widget.pointerValue > 23.45 && widget.pointerValue <=  24.95 && widget.gender  && widget.age == 18 ? Row(
                                       children: [
-                                        SizedBox(width : 15),
-                                        SizedBox(
+                                        const SizedBox(width : 15),
+                                        const SizedBox(
                                           width : 22,
                                           child: Center(child: Icon(Icons.arrow_right,color:Colors.red)),
                                         ),
-                                        Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
-                                        SizedBox(width: 225,),
+                                        const Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
+                                        const SizedBox(width: 225,),
                                         SizedBox(
-                                            child: Text(getoverweightStatus(),style: TextStyle(fontSize: 12, color:Colors.red))),
+                                            child: Text(getoverweightStatus(),style: const TextStyle(fontSize: 12, color:Colors.red))),
 
                                       ],
                                     )
                                         : widget.pointerValue > 23.95 && widget.pointerValue <=  26.75 && !widget.gender  && widget.age == 18 ? Row(
                                       children: [
-                                        SizedBox(width : 15),
-                                        SizedBox(
+                                        const SizedBox(width : 15),
+                                        const SizedBox(
                                           width : 22,
                                           child: Center(child: Icon(Icons.arrow_right,color:Colors.red)),
                                         ),
-                                        Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
-                                        SizedBox(width: 225,),
+                                        const Text("Overweight",style: TextStyle(fontSize: 12, color: Colors.red)),
+                                        const SizedBox(width: 225,),
                                         SizedBox(
-                                            child: Text(getoverweightStatus(),style: TextStyle(fontSize: 12, color:Colors.red))),
+                                            child: Text(getoverweightStatus(),style: const TextStyle(fontSize: 12, color:Colors.red))),
 
                                       ],
                                     )
@@ -4673,10 +4673,10 @@ class _ResultChartState extends State<ResultChart>
                                         //   height: 25,
                                         //   width: 22,),
 
-                                        SizedBox( width: 37,height: 25,),
-                                        SizedBox(child: Text("Overweight",style: TextStyle(fontSize: 12,),)),
-                                        SizedBox(width: 225,),
-                                        SizedBox(child: Text(getoverweightStatus() ,style: TextStyle(fontSize: 12),))
+                                        const SizedBox( width: 37,height: 25,),
+                                        const SizedBox(child: Text("Overweight",style: TextStyle(fontSize: 12,),)),
+                                        const SizedBox(width: 225,),
+                                        SizedBox(child: Text(getoverweightStatus() ,style: const TextStyle(fontSize: 12),))
                                       ],
                                     ),
                                   ),
@@ -4685,59 +4685,59 @@ class _ResultChartState extends State<ResultChart>
                           Column(
                             children: [
 
-                              SizedBox(height: 6,),
+                              const SizedBox(height: 6,),
                               Row(
                                 children: [
-                                  SizedBox (width: 10,),
+                                  const SizedBox (width: 10,),
                                    widget.pointerValue > 18.45 &&   widget.pointerValue <= 24.95  && widget.age > 18?
                                    SizedBox(
                                      height: 20,
                                     width: 18,
                                      child: Icon(Icons.arrow_right,color: Colors.green.shade400),) :
-                                  SizedBox( width: 18,height: 20,),
+                                  const SizedBox( width: 18,height: 20,),
                                   SizedBox(child: Padding(
                                     padding: const EdgeInsets.only(left : 9,top: 3.5),
                                     child: Text("Normal",style: TextStyle(fontSize: 12, color:  widget.pointerValue > 18.45 &&   widget.pointerValue <=24.95  && widget.age > 18? Colors.green.shade400 : Colors.black),),
                                   )),
-                                  SizedBox(width: 238,),
+                                  const SizedBox(width: 238,),
                                   SizedBox(child: Text("18.4 - 24.9",style: TextStyle(fontSize: 12, color:  widget.pointerValue > 18.45 &&   widget.pointerValue <=24.95 && widget.age > 18? Colors.green.shade400 : Colors.black),))
                                 ],
                               ),
-                              SizedBox(height: 6,),
+                              const SizedBox(height: 6,),
                               Row(
                                 children: [
-                                  SizedBox (width: 10,),
+                                  const SizedBox (width: 10,),
                                    widget.pointerValue >24.95 &&   widget.pointerValue <= 29.95   && widget.age > 18?
-                                  SizedBox(
+                                  const SizedBox(
                                      height: 20,
                                      width: 18,
                                      child: Icon(Icons.arrow_right,color:Colors.red ),
                                    )
-                                   : SizedBox( width: 18,height: 20,),
+                                   : const SizedBox( width: 18,height: 20,),
                                   SizedBox(child: Padding(
                                     padding: const EdgeInsets.only(left : 9,top: 3.5),
                                     child: Text("Overweight",style: TextStyle(fontSize: 12,color:   widget.pointerValue >24.95 &&   widget.pointerValue <=29.95   && widget.age > 18? Colors.red : Colors.black ),),
                                   )),
-                                  SizedBox(width: 220,),
+                                  const SizedBox(width: 220,),
                                   SizedBox(child: Text("25.0 - 29.9",style: TextStyle(fontSize: 12,color:   widget.pointerValue >24.95 &&   widget.pointerValue <=29.95   && widget.age > 18? Colors.red : Colors.black ),))
                                 ],
                               ),
-                              SizedBox(height: 6,),
+                              const SizedBox(height: 6,),
                               Row(
                                 children: [
-                                  SizedBox (width: 10,),
+                                  const SizedBox (width: 10,),
                                 widget.pointerValue >29.95 &&   widget.pointerValue <=34.94   && widget.age > 18?
-                                  SizedBox(
+                                  const SizedBox(
                                      height: 20,
                                      width: 18,
                                      child: Icon(Icons.arrow_right,color: Colors.red),
                                    ) :
-                                  SizedBox( width: 18,height: 20,),
+                                  const SizedBox( width: 18,height: 20,),
                                   SizedBox(child: Padding(
                                     padding: const EdgeInsets.only(left : 9,top: 3.5),
                                     child: Text("Obese Class I",style: TextStyle(fontSize: 12,color:  widget.pointerValue >29.95 &&   widget.pointerValue <= 34.95   && widget.age > 18? Colors.red : Colors.black),),
                                   )),
-                                  SizedBox(width: 207,),
+                                  const SizedBox(width: 207,),
                                   SizedBox(child: Text("30.0 - 34.9",style: TextStyle(fontSize: 12,color:  widget.pointerValue >29.95 &&   widget.pointerValue <= 34.95   && widget.age > 18? Colors.red : Colors.black),))
                                 ],
                               ),
@@ -4758,7 +4758,7 @@ class _ResultChartState extends State<ResultChart>
                           widget:
                           widget.age <7
                               ?
-                          Column(
+                          const Column(
                             children: [
 
                               Row(
@@ -4766,7 +4766,7 @@ class _ResultChartState extends State<ResultChart>
                                   SizedBox (width: 10,),
                                   SizedBox( width: 18,height: 20,),
                                   SizedBox(child: Padding(
-                                    padding: const EdgeInsets.only(left : 9,top: 3.5),
+                                    padding: EdgeInsets.only(left : 9,top: 3.5),
                                     child: Text("Obese Class II",style: TextStyle(fontSize: 12,),),
                                   )),
                                   SizedBox(width: 204.5,),
@@ -4779,7 +4779,7 @@ class _ResultChartState extends State<ResultChart>
                                   SizedBox (width: 10,),
                                   SizedBox( width: 18,height: 20,),
                                   SizedBox(child: Padding(
-                                    padding: const EdgeInsets.only(left : 9,top: 3.5),
+                                    padding: EdgeInsets.only(left : 9,top: 3.5),
                                     child: Text("Obese Class III",style: TextStyle(fontSize: 12,),),
                                   )),
                                   SizedBox(width: 211.5,),
@@ -4797,292 +4797,292 @@ class _ResultChartState extends State<ResultChart>
                       children: [
 
 
-                SizedBox(height: 5,),
+                const SizedBox(height: 5,),
                 Row(
                   children: [
 
                           widget.pointerValue > 23.0  && widget.gender  && widget.age == 7?  Row(
                             children: [
-                              SizedBox(
+                              const SizedBox(
                       width : 22,
                       child: Center(child: Icon(Icons.arrow_right,color: Colors.red)),
                     ),
-                              SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
-                              SizedBox(width: 250,),
-                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: TextStyle(fontSize: 12,color:Colors.red))),
+                              const SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
+                              const SizedBox(width: 250,),
+                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: const TextStyle(fontSize: 12,color:Colors.red))),
                             ],
                           )
 
 
                               : widget.pointerValue > 23.05  && widget.gender  && widget.age == 7?  Row(
                             children: [
-                              SizedBox(
+                              const SizedBox(
                       width : 22,
                       child: Center(child: Icon(Icons.arrow_right,color: Colors.red)),
                     ),
-                              SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
-                              SizedBox(width: 250,),
-                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: TextStyle(fontSize: 12,color:Colors.red))),
+                              const SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
+                              const SizedBox(width: 250,),
+                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: const TextStyle(fontSize: 12,color:Colors.red))),
                             ],
                           )
                               : widget.pointerValue > 21.05  && !widget.gender  && widget.age == 7 ? Row(
                             children: [
-                              SizedBox(
+                              const SizedBox(
                       width : 22,
                       child: Center(child: Icon(Icons.arrow_right,color: Colors.red)),
                     ),
-                              SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
-                              SizedBox(width: 250,),
-                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: TextStyle(fontSize: 12,color:Colors.red))),
+                              const SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
+                              const SizedBox(width: 250,),
+                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: const TextStyle(fontSize: 12,color:Colors.red))),
                             ],
                           )
                               : widget.pointerValue > 22.25  && widget.gender  && widget.age == 8 ? Row(
                             children: [
-                              SizedBox(
+                              const SizedBox(
                       width : 22,
                       child: Center(child: Icon(Icons.arrow_right,color: Colors.red)),
                     ),
-                              SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
-                              SizedBox(width: 250,),
-                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: TextStyle(fontSize: 12,color:Colors.red))),
+                              const SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
+                              const SizedBox(width: 250,),
+                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: const TextStyle(fontSize: 12,color:Colors.red))),
                             ],
                           )
                               : widget.pointerValue > 22.55 && !widget.gender  && widget.age == 8 ?  Row(
                             children: [
-                              SizedBox(
+                              const SizedBox(
                       width : 22,
                       child: Center(child: Icon(Icons.arrow_right,color: Colors.red)),
                     ),
-                              SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
-                              SizedBox(width: 250,),
-                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: TextStyle(fontSize: 12,color:Colors.red))),
+                              const SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
+                              const SizedBox(width: 250,),
+                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: const TextStyle(fontSize: 12,color:Colors.red))),
                             ],
                           )
                               : widget.pointerValue > 23.35  && widget.gender  && widget.age == 9 ?  Row(
                             children: [
-                              SizedBox(
+                              const SizedBox(
                                 width : 22,
                                 child: Center(child: Icon(Icons.arrow_right,color: Colors.red)),
                               ),
-                              SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
-                              SizedBox(width: 250,),
-                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: TextStyle(fontSize: 12,color:Colors.red))),
+                              const SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
+                              const SizedBox(width: 250,),
+                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: const TextStyle(fontSize: 12,color:Colors.red))),
                             ],
                           )
                               : widget.pointerValue > 21.55  && !widget.gender  && widget.age == 9 ? Row(
                             children: [
-                              SizedBox(
+                              const SizedBox(
                                 width : 22,
                                 child: Center(child: Icon(Icons.arrow_right,color: Colors.red)),
                               ),
-                              SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
-                              SizedBox(width: 250,),
-                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: TextStyle(fontSize: 12,color:Colors.red))),
+                              const SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
+                              const SizedBox(width: 250,),
+                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: const TextStyle(fontSize: 12,color:Colors.red))),
                             ],
                           )
                               : widget.pointerValue > 23.35  && widget.gender  && widget.age == 10 ? Row(
                             children: [
-                              SizedBox(
+                              const SizedBox(
                       width : 22,
                       child: Center(child: Icon(Icons.arrow_right,color: Colors.red)),
                     ),
-                              SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
-                              SizedBox(width: 250,),
-                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: TextStyle(fontSize: 12,color:Colors.red))),
+                              const SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
+                              const SizedBox(width: 250,),
+                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: const TextStyle(fontSize: 12,color:Colors.red))),
                             ],
                           )
                               : widget.pointerValue > 25.55  && !widget.gender  && widget.age == 10 ? Row(
                             children: [
-                              SizedBox(
+                              const SizedBox(
                                 width : 22,
                                 child: Center(child: Icon(Icons.arrow_right,color: Colors.red)),
                               ),
-                              SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
-                              SizedBox(width: 250,),
-                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: TextStyle(fontSize: 12,color:Colors.red))),
+                              const SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
+                              const SizedBox(width: 250,),
+                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: const TextStyle(fontSize: 12,color:Colors.red))),
                             ],
                           )
                               : widget.pointerValue > 22.85 && widget.gender  && widget.age == 11 ? Row(
                             children: [
-                              SizedBox(
+                              const SizedBox(
                       width : 22,
                       child: Center(child: Icon(Icons.arrow_right,color: Colors.red)),
                     ),
-                              SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
-                              SizedBox(width: 250,),
-                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: TextStyle(fontSize: 12,color:Colors.red))),
+                              const SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
+                              const SizedBox(width: 250,),
+                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: const TextStyle(fontSize: 12,color:Colors.red))),
                             ],
                           )
                               : widget.pointerValue > 23.55 && !widget.gender  && widget.age == 11 ? Row(
                             children: [
-                              SizedBox(
+                              const SizedBox(
                       width : 22,
                       child: Center(child: Icon(Icons.arrow_right,color: Colors.red)),
                     ),
-                              SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
-                              SizedBox(width: 250,),
-                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: TextStyle(fontSize: 12,color:Colors.red))),
+                              const SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
+                              const SizedBox(width: 250,),
+                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: const TextStyle(fontSize: 12,color:Colors.red))),
                             ],
                           )
                               : widget.pointerValue > 23.35  && widget.gender  && widget.age == 12 ? Row(
                             children: [
-                              SizedBox(
+                              const SizedBox(
                       width : 22,
                       child: Center(child: Icon(Icons.arrow_right,color: Colors.red)),
                     ),
-                              SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
-                              SizedBox(width: 250,),
-                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: TextStyle(fontSize: 12,color:Colors.red))),
+                              const SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
+                              const SizedBox(width: 250,),
+                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: const TextStyle(fontSize: 12,color:Colors.red))),
                             ],
                           )
                               : widget.pointerValue > 24.75  && !widget.gender  && widget.age == 12 ? Row(
                             children: [
-                              SizedBox(
+                              const SizedBox(
                       width : 22,
                       child: Center(child: Icon(Icons.arrow_right,color: Colors.red)),
                     ),
-                              SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
-                              SizedBox(width: 250,),
-                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: TextStyle(fontSize: 12,color:Colors.red))),
+                              const SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
+                              const SizedBox(width: 250,),
+                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: const TextStyle(fontSize: 12,color:Colors.red))),
                             ],
                           )
                               : widget.pointerValue > 24.35  && widget.gender  && widget.age == 13 ? Row(
                             children: [
-                              SizedBox(
+                              const SizedBox(
                       width : 22,
                       child: Center(child: Icon(Icons.arrow_right,color: Colors.red)),
                     ),
-                              SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
-                              SizedBox(width: 250,),
-                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: TextStyle(fontSize: 12,color:Colors.red))),
+                              const SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
+                              const SizedBox(width: 250,),
+                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: const TextStyle(fontSize: 12,color:Colors.red))),
                             ],
                           )
                               : widget.pointerValue > 24.45  &&  !widget.gender  && widget.age == 13 ? Row(
                             children: [
-                              SizedBox(
+                              const SizedBox(
                       width : 22,
                       child: Center(child: Icon(Icons.arrow_right,color: Colors.red)),
                     ),
-                              SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
-                              SizedBox(width: 250,),
-                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: TextStyle(fontSize: 12,color:Colors.red))),
+                              const SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
+                              const SizedBox(width: 250,),
+                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: const TextStyle(fontSize: 12,color:Colors.red))),
                             ],
                           )
                               : widget.pointerValue > 25.95  &&  widget.gender  && widget.age == 14 ? Row(
                             children: [
-                              SizedBox(
+                              const SizedBox(
                       width : 22,
                       child: Center(child: Icon(Icons.arrow_right,color: Colors.red)),
                     ),
-                              SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
-                              SizedBox(width: 250,),
-                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: TextStyle(fontSize: 12,color:Colors.red))),
+                              const SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
+                              const SizedBox(width: 250,),
+                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: const TextStyle(fontSize: 12,color:Colors.red))),
                             ],
                           )
                               : widget.pointerValue > 25.65  &&  !widget.gender  && widget.age == 14 ? Row(
                             children: [
-                              SizedBox(
+                              const SizedBox(
                       width : 22,
                       child: Center(child: Icon(Icons.arrow_right,color: Colors.red)),
                     ),
-                              SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
-                              SizedBox(width: 250,),
-                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: TextStyle(fontSize: 12,color:Colors.red))),
+                              const SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
+                              const SizedBox(width: 250,),
+                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: const TextStyle(fontSize: 12,color:Colors.red))),
                             ],
                           )
                               : widget.pointerValue > 27.55  && widget.gender  && widget.age == 15 ? Row(
                             children: [
-                              SizedBox(
+                              const SizedBox(
                       width : 22,
                       child: Center(child: Icon(Icons.arrow_right,color: Colors.red)),
                     ),
-                              SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
-                              SizedBox(width: 250,),
-                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: TextStyle(fontSize: 12,color:Colors.red))),
+                              const SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
+                              const SizedBox(width: 250,),
+                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: const TextStyle(fontSize: 12,color:Colors.red))),
                             ],
                           )
                               : widget.pointerValue > 25.85  && !widget.gender  && widget.age == 15 ? Row(
                             children: [
-                              SizedBox(
+                              const SizedBox(
                       width : 22,
                       child: Center(child: Icon(Icons.arrow_right,color: Colors.red)),
                     ),
-                              SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
-                              SizedBox(width: 250,),
-                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: TextStyle(fontSize: 12,color:Colors.red))),
+                              const SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
+                              const SizedBox(width: 250,),
+                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: const TextStyle(fontSize: 12,color:Colors.red))),
                             ],
                           )
                               : widget.pointerValue > 24.15  && widget.gender  && widget.age == 16 ? Row(
                             children: [
-                              SizedBox(
+                              const SizedBox(
                       width : 22,
                       child: Center(child: Icon(Icons.arrow_right,color: Colors.red)),
                     ),
-                              SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
-                              SizedBox(width: 250,),
-                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: TextStyle(fontSize: 12,color:Colors.red))),
+                              const SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
+                              const SizedBox(width: 250,),
+                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: const TextStyle(fontSize: 12,color:Colors.red))),
                             ],
                           )
                               : widget.pointerValue > 25.95  && !widget.gender  && widget.age == 16 ? Row(children: [
-                              SizedBox(
+                              const SizedBox(
                       width : 22,
                       child: Center(child: Icon(Icons.arrow_right,color: Colors.red)),
                     ),
-                              SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
-                              SizedBox(width: 250,),
-                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: TextStyle(fontSize: 12,color:Colors.red))),
+                              const SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
+                              const SizedBox(width: 250,),
+                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: const TextStyle(fontSize: 12,color:Colors.red))),
                             ],
                           )
                               : widget.pointerValue > 25.65  && widget.gender  && widget.age == 17 ? Row(
                             children: [
-                              SizedBox(
+                              const SizedBox(
                       width : 22,
                       child: Center(child: Icon(Icons.arrow_right,color: Colors.red)),
                     ),
-                              SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
-                              SizedBox(width: 250,),
-                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: TextStyle(fontSize: 12,color:Colors.red))),
+                              const SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
+                              const SizedBox(width: 250,),
+                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: const TextStyle(fontSize: 12,color:Colors.red))),
                             ],
                           )
                               : widget.pointerValue > 25.75  && !widget.gender  && widget.age == 17 ? Row(
                             children: [
-                              SizedBox(
+                              const SizedBox(
                       width : 22,
                       child: Center(child: Icon(Icons.arrow_right,color: Colors.red)),
                     ),
-                              SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
-                              SizedBox(width: 250,),
-                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: TextStyle(fontSize: 12,color:Colors.red))),
+                              const SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
+                              const SizedBox(width: 250,),
+                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: const TextStyle(fontSize: 12,color:Colors.red))),
                             ],
                           )
                               : widget.pointerValue > 24.95  &&  widget.gender  && widget.age == 18 ? Row(
                             children: [
-                              SizedBox(
+                              const SizedBox(
                       width : 22,
                       child: Center(child: Icon(Icons.arrow_right,color: Colors.red)),
                     ),
-                              SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
-                              SizedBox(width: 250,),
-                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: TextStyle(fontSize: 12,color:Colors.red))),
+                              const SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
+                              const SizedBox(width: 250,),
+                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: const TextStyle(fontSize: 12,color:Colors.red))),
                             ],
                           )
                               : widget.pointerValue > 26.75  && !widget.gender  && widget.age == 18 ? Row(
                             children: [
-                              SizedBox(
+                              const SizedBox(
                       width : 22,
                       child: Center(child: Icon(Icons.arrow_right,color: Colors.red)),
                     ),
-                              SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
-                              SizedBox(width: 250,),
-                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: TextStyle(fontSize: 12,color:Colors.red))),
+                              const SizedBox(width : 40,child: Text("Obese",style: TextStyle(fontSize: 12,color: Colors.red))),
+                              const SizedBox(width: 250,),
+                              SizedBox(width : 40,child: Text(getobeseweightStatus(),style: const TextStyle(fontSize: 12,color:Colors.red))),
                             ],
                           )
                              : Row(
                             children: [
-                              SizedBox( width: 25,height: 25,),
-                              SizedBox(child: Text("Obese",style: TextStyle(fontSize: 12,),)),
-                              SizedBox(width: 245,),
-                              SizedBox(child: Text(getobeseweightStatus() ,style: TextStyle(fontSize: 12),))
+                              const SizedBox( width: 25,height: 25,),
+                              const SizedBox(child: Text("Obese",style: TextStyle(fontSize: 12,),)),
+                              const SizedBox(width: 245,),
+                              SizedBox(child: Text(getobeseweightStatus() ,style: const TextStyle(fontSize: 12),))
                             ],
                           ),
                   ],
@@ -5097,38 +5097,38 @@ class _ResultChartState extends State<ResultChart>
 
                               Row(
                                 children: [
-                                  SizedBox (width: 10,),
+                                  const SizedBox (width: 10,),
                                   widget.pointerValue > 34.95 &&   widget.pointerValue <=39.95   && widget.age > 18?
-                                     SizedBox(
+                                     const SizedBox(
                                      height: 20,
                                      width: 18,
                                      child: Icon(Icons.arrow_right,color: Colors.red),
                                    ) :
-                                  SizedBox( width: 18,height: 20,),
+                                  const SizedBox( width: 18,height: 20,),
                                   SizedBox(child: Padding(
                                     padding: const EdgeInsets.only(left : 9,top: 3.5),
                                     child: Text("Obese Class II",style: TextStyle(fontSize: 12,color: widget.pointerValue > 34.95 &&   widget.pointerValue <=39.95   && widget.age > 18?  Colors.red : Colors.black),),
                                   )),
-                                  SizedBox(width: 204.5,),
+                                  const SizedBox(width: 204.5,),
                                   SizedBox(child: Text("35.0 - 39.9",style: TextStyle(fontSize: 12,color: widget.pointerValue > 34.95 &&   widget.pointerValue <=39.95   && widget.age > 18?  Colors.red : Colors.black),))
                                 ],
                               ),
-                              SizedBox(height: 7,),
+                              const SizedBox(height: 7,),
                               Row(
                                 children: [
-                                  SizedBox (width: 10,),
+                                  const SizedBox (width: 10,),
                                     widget.pointerValue >39.95  && widget.age > 18?
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 20,
                                     width: 18,
                                     child: Icon(Icons.arrow_right,color: Colors.red),
                                   ) :
-                                  SizedBox( width: 18,height: 20,),
+                                  const SizedBox( width: 18,height: 20,),
                                   SizedBox(child: Padding(
                                     padding: const EdgeInsets.only(left : 9,top: 3.5),
                                     child: Text("Obese Class III",style: TextStyle(fontSize: 12,color:  widget.pointerValue >39.95  && widget.age > 18?  Colors.red : Colors.black),),
                                   )),
-                                  SizedBox(width: 211.5,),
+                                  const SizedBox(width: 211.5,),
                                   SizedBox(child: Text("≥ 40.0",style: TextStyle(fontSize: 12,color:  widget.pointerValue >39.95  && widget.age > 18?    Colors.red : Colors.black),))
                                 ],
                               ),
@@ -5139,7 +5139,7 @@ class _ResultChartState extends State<ResultChart>
                        ),
 
                        /// last part
-                       GaugeAnnotation(
+                       const GaugeAnnotation(
                           angle: 56,
                           horizontalAlignment: GaugeAlignment.far,
                           positionFactor: 1.9,
@@ -5160,40 +5160,40 @@ class _ResultChartState extends State<ResultChart>
                             padding: const EdgeInsets.only(left: 10),
                             child: Row(
                               children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 20),
+                                const Padding(
+                                  padding: EdgeInsets.only(left: 20),
                                   child: Text("Normal Weight",style: TextStyle(fontSize: 12,fontWeight: FontWeight.bold),),
                                 ),
-                                SizedBox(width: 220,),
+                                const SizedBox(width: 220,),
                                 SizedBox(
                                   child:
-                                       widget.pointerValue <= 10 && widget.age < 7 ? Text("...",style: TextStyle(fontSize: 12),)
+                                       widget.pointerValue <= 10 && widget.age < 7 ? const Text("...",style: TextStyle(fontSize: 12),)
                                             : widget.selecteditems2 == 'kg' && widget.age > 6  && widget.pointerValue > 10  ? Row(
                                           children: [
-                                            Text('${getNormalweightlowervalue().toStringAsFixed(1)}',style: TextStyle(fontSize: 13)),
-                                            Text('-'),
-                                            Text('${getNormalweightupperrvalue().toStringAsFixed(1)}',style: TextStyle(fontSize: 13)),
-                                            Text(" kg",style: TextStyle(fontSize: 13))
+                                            Text('${getNormalweightlowervalue().toStringAsFixed(1)}',style: const TextStyle(fontSize: 13)),
+                                            const Text('-'),
+                                            Text('${getNormalweightupperrvalue().toStringAsFixed(1)}',style: const TextStyle(fontSize: 13)),
+                                            const Text(" kg",style: TextStyle(fontSize: 13))
                                           ],
                                         )      
                                             : widget.selecteditems2 == 'lb' && widget.age > 6  && widget.pointerValue > 10  ? Row(
                                           children: [
-                                            Text('${kgtolbs.toStringAsFixed(1)}',style: TextStyle(fontSize: 13)),
-                                            Text('-'),
-                                            Text('${kgtolbs2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13)),
-                                            Text(" lb",style: TextStyle(fontSize: 13))
+                                            Text('${kgtolbs.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13)),
+                                            const Text('-'),
+                                            Text('${kgtolbs2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13)),
+                                            const Text(" lb",style: TextStyle(fontSize: 13))
                                           ],
                                         )
                                            : widget.selecteditems2 == 'st' && widget.age > 6  && widget.pointerValue > 10  ? Row(
                                          children: [
-                                           Text('${kgtolbs.toStringAsFixed(1)}',style: TextStyle(fontSize: 13)),
-                                           Text('-'),
-                                           Text('${kgtolbs2.toStringAsFixed(1)}',style: TextStyle(fontSize: 13)),
-                                           Text(" lb",style: TextStyle(fontSize: 13))
+                                           Text('${kgtolbs.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13)),
+                                           const Text('-'),
+                                           Text('${kgtolbs2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13)),
+                                           const Text(" lb",style: TextStyle(fontSize: 13))
                                          ],
                                        )
                                            
-                                        :  Text("...",style: TextStyle(fontSize: 12),) ,
+                                        :  const Text("...",style: TextStyle(fontSize: 12),) ,
 
 
                                 )
