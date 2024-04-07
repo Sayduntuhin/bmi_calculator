@@ -26,6 +26,7 @@ class _SettingsPageState extends State<SettingsPage> {
   bool light = false;
   String? selectedunite;
   String? selectedunite2;
+  String? selectedunite3;
 
   @override
 
@@ -183,10 +184,10 @@ class _SettingsPageState extends State<SettingsPage> {
                           ),
                         ))
                             .toList(),
-                        value: selectedunite,
+                        value: selectedunite2,
                         onChanged: (String? value) {
                           setState(() {
-                            selectedunite = value!;
+                            selectedunite2 = value!;
                             //  _saveSelectedValue(value);
                           });
                         },
@@ -252,10 +253,10 @@ class _SettingsPageState extends State<SettingsPage> {
                           ),
                         ))
                             .toList(),
-                        value: selectedunite,
+                        value: selectedunite3,
                         onChanged: (String? value) {
                           setState(() {
-                            selectedunite = value!;
+                            selectedunite3 = value!;
                             //  _saveSelectedValue(value);
                           });
                         },
