@@ -1,6 +1,8 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 class SettingsPage extends StatefulWidget {
+  const SettingsPage({super.key});
+
 
 
 
@@ -35,7 +37,7 @@ class _SettingsPageState extends State<SettingsPage> {
     double screenwidth = mediaQueryData.size.width;
     return Scaffold(
       appBar:  AppBar(
-        title: Text("Settings",style: TextStyle(color: Colors.black),),
+        title: const Text("Settings",style: TextStyle(color: Colors.black),),
     backgroundColor: Colors.grey.shade200,
     toolbarHeight: 60,),
       body: Column(
@@ -59,8 +61,8 @@ class _SettingsPageState extends State<SettingsPage> {
                          borderRadius: BorderRadius.circular(5),),
                        child: DropdownButton2<String>(
                          isExpanded: true,
-                         hint: Padding(
-                           padding: const EdgeInsets.only(left: 10),
+                         hint: const Padding(
+                           padding: EdgeInsets.only(left: 10),
                            child: Text(
                              'WHO',
                              style: TextStyle(
@@ -78,7 +80,7 @@ class _SettingsPageState extends State<SettingsPage> {
 
                                child: Text(
                                  item,
-                                 style: TextStyle(
+                                 style: const TextStyle(
                                      color: Colors.black,
                                      fontSize: 15),
                                  overflow: TextOverflow.ellipsis,
@@ -95,8 +97,8 @@ class _SettingsPageState extends State<SettingsPage> {
                            });
                          },
 
-                         iconStyleData: IconStyleData(
-                           icon: const Icon(
+                         iconStyleData: const IconStyleData(
+                           icon: Icon(
                              Icons.arrow_drop_down,
                              size: 25,
                            ),
@@ -121,7 +123,7 @@ class _SettingsPageState extends State<SettingsPage> {
                  child: Row(
                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                    children: [
-                      Text("Adults only",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w600),),
+                      const Text("Adults only",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w600),),
                      Switch(
     // This bool value toggles the switch.
     value: light,
@@ -140,7 +142,7 @@ class _SettingsPageState extends State<SettingsPage> {
             padding: const EdgeInsets.only(left: 20),
             child: Text("Units",style: TextStyle(color: Colors.brown.shade400,fontSize: 13),),
           ),
-               SizedBox(height: 20,),
+               const SizedBox(height: 20,),
                Row(
             children: [
 
@@ -156,8 +158,8 @@ class _SettingsPageState extends State<SettingsPage> {
                         borderRadius: BorderRadius.circular(5),),
                       child: DropdownButton2<String>(
                         isExpanded: true,
-                        hint: Padding(
-                          padding: const EdgeInsets.only(left: 10),
+                        hint: const Padding(
+                          padding: EdgeInsets.only(left: 10),
                           child: Text(
                             'ft',
                             style: TextStyle(
@@ -175,7 +177,7 @@ class _SettingsPageState extends State<SettingsPage> {
                               padding: const EdgeInsets.only(left: 10),
                               child: Text(
                                 item,
-                                style: TextStyle(
+                                style: const TextStyle(
                                     color: Colors.black,
                                     fontSize: 15),
                                 overflow: TextOverflow.ellipsis,
@@ -192,8 +194,8 @@ class _SettingsPageState extends State<SettingsPage> {
                           });
                         },
 
-                        iconStyleData: IconStyleData(
-                          icon: const Icon(
+                        iconStyleData: const IconStyleData(
+                          icon: Icon(
                             Icons.arrow_drop_down,
                             size: 25,
                           ),
@@ -225,8 +227,8 @@ class _SettingsPageState extends State<SettingsPage> {
                         borderRadius: BorderRadius.circular(5),),
                       child: DropdownButton2<String>(
                         isExpanded: true,
-                        hint: Padding(
-                          padding: const EdgeInsets.only(left: 10),
+                        hint: const Padding(
+                          padding: EdgeInsets.only(left: 10),
                           child: Text(
                             'kg',
                             style: TextStyle(
@@ -244,7 +246,7 @@ class _SettingsPageState extends State<SettingsPage> {
 
                               child: Text(
                                 item,
-                                style: TextStyle(
+                                style: const TextStyle(
                                     color: Colors.black,
                                     fontSize: 15),
                                 overflow: TextOverflow.ellipsis,
@@ -261,8 +263,8 @@ class _SettingsPageState extends State<SettingsPage> {
                           });
                         },
 
-                        iconStyleData: IconStyleData(
-                          icon: const Icon(
+                        iconStyleData: const IconStyleData(
+                          icon: Icon(
                             Icons.arrow_drop_down,
                             size: 25,
                           ),
@@ -289,31 +291,31 @@ class _SettingsPageState extends State<SettingsPage> {
             padding: const EdgeInsets.only(left: 20,top: 20),
             child: Text("More",style: TextStyle(color: Colors.brown.shade400,fontSize: 13),),
           ),
-               Padding(
-                 padding: const EdgeInsets.all(20),
+               const Padding(
+                 padding: EdgeInsets.all(20),
                  child: Text("Remove ads",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w400),),
                ),
-               Padding(
-            padding: const EdgeInsets.all(20),
+               const Padding(
+            padding: EdgeInsets.all(20),
             child: Text("Help & feedback",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w400),),
           ),
-               Padding(
-            padding: const EdgeInsets.all(20),
+               const Padding(
+            padding: EdgeInsets.all(20),
             child: Text("Share this app",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w400),),
           ),
-               Padding(
-            padding: const EdgeInsets.all(20),
+               const Padding(
+            padding: EdgeInsets.all(20),
             child: Text("Rate this app",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w400),),
           ),
-               Padding(
-            padding: const EdgeInsets.all(20),
+               const Padding(
+            padding: EdgeInsets.all(20),
             child: Text("More apps",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w400),),
           ),
-               SizedBox(height: 20,),
+               const SizedBox(height: 20,),
                Row(
                  children: [
                    SizedBox(width: screenwidth*.42,),
-                   Text("1.7.6(1472)",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),),
+                   const Text("1.7.6(1472)",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),),
                  ],
                ),
 
