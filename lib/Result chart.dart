@@ -603,10 +603,12 @@ class _ResultChartState extends State<ResultChart>
 
     double difforkg = getNormalweightlowervalue() - widget.forkg;  
     double difforkg2 = -(getNormalweightupperrvalue() - widget.forkg);
-   double kgtolbs = (getNormalweightlowervalue() * 2.205) - widget.forlb;
-   double kgtolbsup = -((getNormalweightlowervalue() * 2.205) - widget.forlb);
-   double kgtolbs2 =  (getNormalweightlowervalue() * 2.205) - widget.forlb2;
-   double kgtolbs2up = -((getNormalweightlowervalue() * 2.205) - widget.forlb2);
+    double normalweightforlb =  (getNormalweightlowervalue() * 2.205);
+    double normalweightforlb2 =  (getNormalweightupperrvalue() * 2.205);
+    double kgtolbs = (getNormalweightlowervalue() * 2.205) - widget.forlb;
+    double kgtolbsup = -((getNormalweightlowervalue() * 2.205) - widget.forlb);
+    double kgtolbs2 =  (getNormalweightlowervalue() * 2.205) - widget.forlb2;
+    double kgtolbs2up = -((getNormalweightlowervalue() * 2.205) - widget.forlb2);
     return
 
       Column(
@@ -5178,17 +5180,17 @@ class _ResultChartState extends State<ResultChart>
                                         )      
                                             : widget.selecteditems2 == 'lb' && widget.age > 6  && widget.pointerValue > 10  ? Row(
                                           children: [
-                                            Text('${kgtolbs.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13)),
+                                            Text('${normalweightforlb.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13)),
                                             const Text('-'),
-                                            Text('${kgtolbs2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13)),
+                                            Text('${normalweightforlb2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13)),
                                             const Text(" lb",style: TextStyle(fontSize: 13))
                                           ],
                                         )
                                            : widget.selecteditems2 == 'st' && widget.age > 6  && widget.pointerValue > 10  ? Row(
                                          children: [
-                                           Text('${kgtolbs.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13)),
+                                           Text('${normalweightforlb.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13)),
                                            const Text('-'),
-                                           Text('${kgtolbs2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13)),
+                                           Text('${normalweightforlb2.toStringAsFixed(1)}',style: const TextStyle(fontSize: 13)),
                                            const Text(" lb",style: TextStyle(fontSize: 13))
                                          ],
                                        )

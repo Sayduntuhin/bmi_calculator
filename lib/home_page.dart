@@ -32,6 +32,18 @@ class _HomepageState extends State<Homepage> {
   final TextEditingController lbs2Controller = TextEditingController();
   final TextEditingController CmController = TextEditingController();
 
+  void dispose() {
+    ageController.dispose();
+    feetController.dispose();
+    inchController.dispose();
+    weightController.dispose();
+    lbsController.dispose();
+    stoneController.dispose();
+    lbs2Controller.dispose();
+    CmController.dispose();
+    super.dispose();
+  }
+
   void clearTextFields() {
     ageController.clear();
     feetController.clear();
@@ -105,6 +117,23 @@ class _HomepageState extends State<Homepage> {
     'st',
   ];
   @override
+  final FocusNode heightfocus = FocusNode();
+  final FocusNode feettoinchs = FocusNode();
+  final FocusNode weightFocusNode = FocusNode();
+
+
+  void _ageSubmitted(String value) {
+    FocusScope.of(context).requestFocus(heightfocus);
+  }
+  void _feetSubmitted(String value) {
+    FocusScope.of(context).requestFocus(feettoinchs);
+  }
+  void _feettoinchsSubmitted(String value) {
+    FocusScope.of(context).requestFocus(weightFocusNode);
+  }
+  void _cmeterSubmitted(String value) {
+    FocusScope.of(context).requestFocus(weightFocusNode);
+  }
 
 
   void initState() {
@@ -229,10 +258,11 @@ class _HomepageState extends State<Homepage> {
                   children: [
                     SizedBox(
                       width: 90,
-                      child: TextField(
+                      child: TextFormField(
 
                         textAlign: TextAlign.center,
                         keyboardType:  TextInputType.number,
+                        onFieldSubmitted: _ageSubmitted,
                         inputFormatters: [
                          FilteringTextInputFormatter.digitsOnly,
                           LengthLimitingTextInputFormatter(3)
@@ -253,9 +283,11 @@ class _HomepageState extends State<Homepage> {
                       padding: const EdgeInsets.only(left: 10),
                       child: SizedBox(
                         width: 80,
-                        child: TextField(
+                        child: TextFormField(
                           textAlign: TextAlign.center,
                           controller: feetController,
+                          onFieldSubmitted: _feetSubmitted,
+                          focusNode: heightfocus,
                           inputFormatters: [
                             LengthLimitingTextInputFormatter(4)
                           ],
@@ -280,9 +312,11 @@ class _HomepageState extends State<Homepage> {
                       padding: const EdgeInsets.only(left: 10),
                       child: SizedBox(
                         width: 80,
-                        child: TextField(
+                        child: TextFormField(
                           textAlign: TextAlign.center,
                           controller: inchController,
+                          onFieldSubmitted: _feettoinchsSubmitted,
+                          focusNode: feettoinchs,
                           keyboardType:  TextInputType.number,
                           inputFormatters: [
                             LengthLimitingTextInputFormatter(4)
@@ -311,10 +345,12 @@ class _HomepageState extends State<Homepage> {
                   children: [
                     SizedBox(
                       width: 90,
-                      child: TextField(
+                      child: TextFormField(
                         textAlign: TextAlign.center,
                         keyboardType:  TextInputType.number,
                         controller: ageController,
+                        onFieldSubmitted: _ageSubmitted,
+
                         inputFormatters: [
                           FilteringTextInputFormatter.digitsOnly,
                           LengthLimitingTextInputFormatter(3)
@@ -331,9 +367,11 @@ class _HomepageState extends State<Homepage> {
                     ),
                     SizedBox(
                       width: 170,
-                      child: TextField(
+                      child: TextFormField(
                         textAlign: TextAlign.center,
                         controller: CmController,
+                        onFieldSubmitted: _cmeterSubmitted,
+                        focusNode: heightfocus,
                         keyboardType:  TextInputType.number,
                         inputFormatters: [
                           LengthLimitingTextInputFormatter(6)
@@ -457,10 +495,11 @@ class _HomepageState extends State<Homepage> {
                       ),
                       SizedBox(
                         width: 170,
-                        child: TextField(
+                        child: TextFormField(
                           textAlign: TextAlign.center,
                           keyboardType: TextInputType.number,
                           controller: weightController,
+                          focusNode: weightFocusNode,
                           inputFormatters: [
                             LengthLimitingTextInputFormatter(6)
                           ],
@@ -500,9 +539,10 @@ class _HomepageState extends State<Homepage> {
                       ),
                       SizedBox(
                         width: 170,
-                        child: TextField(
+                        child: TextFormField(
                           textAlign: TextAlign.center,
                           controller: lbsController,
+                          focusNode: weightFocusNode,
                           keyboardType:  TextInputType.number,
                           inputFormatters: [
                             LengthLimitingTextInputFormatter(6)
@@ -545,8 +585,9 @@ class _HomepageState extends State<Homepage> {
                         padding: const EdgeInsets.only(left: 10),
                         child: SizedBox(
                           width: 80,
-                          child: TextField(
+                          child: TextFormField(
                             textAlign: TextAlign.center,
+                            focusNode: weightFocusNode,
                             keyboardType:  TextInputType.number,
                             inputFormatters: [
                               LengthLimitingTextInputFormatter(4)
@@ -570,8 +611,9 @@ class _HomepageState extends State<Homepage> {
                         padding: const EdgeInsets.only(left: 12),
                         child: SizedBox(
                           width: 80,
-                          child: TextField(
+                          child: TextFormField(
                             textAlign: TextAlign.center,
+                            focusNode: weightFocusNode,
                             keyboardType:  TextInputType.number,
                             controller: lbs2Controller,
                             inputFormatters: [
